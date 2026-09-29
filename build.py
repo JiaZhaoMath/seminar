@@ -302,11 +302,11 @@ def year_page(y: dict, data: dict, today: dt.date, current: dict) -> str:
             years_links.append(f'<li><span aria-current="page">{esc(other["label"])}</span></li>')
         else:
             years_links.append(f'<li><a href="{other["id"]}.html">{esc(other["label"])}</a></li>')
+    blurb = f"<p>{esc(s['blurb'])}</p>\n" if s.get("blurb") else ""
     bands.append(f"""<section id="about" class="band{' band--tint' if len(sections) % 2 == 0 else ''}">
 <div class="wrap">
 <h2>About the seminar</h2>
-<p>{esc(s.get('blurb', ''))}</p>
-<dl>
+{blurb}<dl>
 <dt>When</dt><dd>{esc(slot)}, unless a talk lists a different time.</dd>
 <dt>Organizer</dt><dd>{esc(s['organizer'])}, {mail}</dd>
 <dt>Calendar</dt><dd><a href="{esc(webcal)}">Subscribe</a> to have new talks appear in your calendar automatically, or <a href="seminar.ics">download the .ics file</a>.</dd>
