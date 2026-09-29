@@ -144,7 +144,8 @@ end = "11:50"
 [[talks]]
 date = 2026-11-13
 speaker = "Vadim Zharnitsky"
-affiliation = "Mathematics, UIUC"
+position = "Department of Mathematics"
+affiliation = "University of Illinois Urbana-Champaign"
 title = "Optimal damping in the mass-spring systems"
 abstract = '''
 It is a well-known textbook example in classical mechanics that a single-degree-of-freedom mass-spring harmonic oscillator achieves its fastest exponential decay when the damping is critical. We study the analogous problem of designing optimal damping for a system of several coupled linear oscillators. Using the Weyl–Horn theorem, we construct an explicit damping matrix that theoretically realizes the best possible exponential decay rate of the system, which turns out to be the geometric mean of the natural frequencies. We show that this damping strategy outperforms the classical Rayleigh (proportional) damping approach. We also characterize the parameter regimes in which the optimal damping matrix necessarily ceases to be positive definite, and discuss the implications of this phenomenon.
