@@ -13,21 +13,21 @@ DTSTART:20261113T170000Z
 DTEND:20261113T180000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
  n the mass-spring systems
-DESCRIPTION:Vadim Zharnitsky\, Mathematics\, UIUC\nOptimal damping in the m
- ass-spring systems\nIt is a well-known textbook example in classical mecha
- nics that a single-degree-of-freedom mass-spring harmonic oscillator achie
- ves its fastest exponential decay when the damping is critical. We study t
- he analogous problem of designing optimal damping for a system of several 
- coupled linear oscillators. Using the Weyl–Horn theorem\, we construct a
- n explicit damping matrix that theoretically realizes the best possible ex
- ponential decay rate of the system\, which turns out to be the geometric m
- ean of the natural frequencies. We show that this damping strategy outperf
- orms the classical Rayleigh (proportional) damping approach. We also chara
- cterize the parameter regimes in which the optimal damping matrix necessar
- ily ceases to be positive definite\, and discuss the implications of this 
- phenomenon.\n\nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O
- . Gendelman (Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/20
- 26-2027.html#2026-11-13
+DESCRIPTION:Vadim Zharnitsky\, Department of Mathematics\, University of Il
+ linois Urbana-Champaign\nOptimal damping in the mass-spring systems\nIt is
+  a well-known textbook example in classical mechanics that a single-degree
+ -of-freedom mass-spring harmonic oscillator achieves its fastest exponenti
+ al decay when the damping is critical. We study the analogous problem of d
+ esigning optimal damping for a system of several coupled linear oscillator
+ s. Using the Weyl–Horn theorem\, we construct an explicit damping matrix
+  that theoretically realizes the best possible exponential decay rate of t
+ he system\, which turns out to be the geometric mean of the natural freque
+ ncies. We show that this damping strategy outperforms the classical Raylei
+ gh (proportional) damping approach. We also characterize the parameter reg
+ imes in which the optimal damping matrix necessarily ceases to be positive
+  definite\, and discuss the implications of this phenomenon.\n\nThis is a 
+ joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (Technion\, I
+ srael).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 END:VCALENDAR
