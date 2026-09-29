@@ -73,7 +73,7 @@ class BuildTest(unittest.TestCase):
         cls.tmp.cleanup()
 
     def generated(self):
-        return [p for p in self.out.rglob("*") if p.is_file() and p.suffix in {".html", ".ics"}]
+        return [p for p in self.out.rglob("*") if p.is_file() and p.suffix in {".html", ".ics", ".txt"}]
 
     # ---- privacy
 
@@ -139,6 +139,20 @@ class BuildTest(unittest.TestCase):
             self.assertNotIn('datetime="2026-10-23"', index.split('<section id="open"', 1)[1].split("</section>")[0])
             self.assertNotIn("20261023", (out / "seminar.ics").read_text(encoding="utf-8"))
             self.assertFalse((out / "ics" / "2026-10-23.ics").exists())
+            self.assertNotIn("October 23", (out / "schedule.txt").read_text(encoding="utf-8"))
+
+    def test_schedule_txt(self):
+        text = (self.out / "schedule.txt").read_text(encoding="utf-8")
+        blocks = text.rstrip("\n").split("\n\n")
+        self.assertEqual(len(blocks), 1 + 8)                 # header + one block per talk
+        self.assertTrue(blocks[0].startswith("Applied Mathematics Seminar, 2026–2027"))
+        self.assertIn("Friday, October 16, 2026, 10:00–10:50 AM, GP 208\nAina G. Irbe, Accessible Minds\n", text)
+        laiu = next(b for b in blocks if "Laiu" in b)
+        self.assertEqual(laiu, "Friday, November 6, 2026, 11:00–11:50 AM\nPaul Laiu, Oak Ridge National Laboratory")
+        z = next(b for b in blocks if "Zharnitsky" in b)
+        self.assertIn("11:00 AM–12:00 PM\n", z)               # default slot, no room guessed
+        self.assertNotIn("$", text)
+        self.assertNotIn("\r", text)
 
     # ---- calendar
 
