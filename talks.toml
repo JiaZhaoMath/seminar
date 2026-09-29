@@ -9,7 +9,8 @@
 #                 git add -A && git commit -m "Add talk" && git push
 #
 # A talk needs only `date`. Leave out any field that is not known yet, never
-# write "TBA": the page shows only the fields that are present.
+# write "TBA": the page shows only the fields that are present. A talk with a
+# speaker but no title is shown as "Title TBA" automatically.
 #
 #   date      Friday of the talk (YYYY-MM-DD, no quotes)
 #   speaker   name as the speaker writes it
@@ -34,7 +35,7 @@ site_url = "https://jiazhaomath.github.io/seminar/"
 timezone = "America/Chicago"
 weekday = "Friday"
 default_start = "11:00"
-default_end = "12:00"
+default_end = "11:50"
 
 # One entry per academic year (August 1 through July 31).
 # Open Fridays are derived automatically: every Friday inside a term, from
@@ -120,7 +121,7 @@ title = "Towards Inclusive Intelligence: Defining the Research Challenges at the
 start = "10:00"
 end = "10:50"
 room = "GP 208"
-note = "Earlier time and different room: 10:00 AM in GP 208."
+note = "Earlier time and different room: 10:00–10:50 AM in GP 208."
 abstract = '''
 Organizations are increasingly using artificial intelligence (AI) to create workplace and academic training. AI can generate content quickly, adapt materials to different learners, and deliver information in text, audio, and video. These features seem to align with Universal Design for Learning (UDL), a framework that supports diverse learners by providing multiple means of engagement, representation, and action and expression. However, being efficient and adaptive is not the same as being inclusive. AI-generated training can still overlook barriers related to disability, accessibility, language, cognition, and knowledge transfer.
 
@@ -143,7 +144,7 @@ end = "11:50"
 [[talks]]
 date = 2026-11-13
 speaker = "Vadim Zharnitsky"
-position = "Department of Mathematics"
+position = "Professor, Department of Mathematics"
 affiliation = "University of Illinois Urbana-Champaign"
 title = "Optimal damping in the mass-spring systems"
 abstract = '''
@@ -155,6 +156,7 @@ This is a joint work with M. Arnold (UT-Dallas, USA) and O. Gendelman (Technion,
 [[talks]]
 date = 2026-11-20
 speaker = "Kirill Golubnichiy"
+position = "Postdoc, Department of Mathematics & Statistics"
 affiliation = "Texas Tech University"
 title = "A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography"
 abstract = '''

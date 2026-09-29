@@ -10,24 +10,25 @@ BEGIN:VEVENT
 UID:20261113-applied-math-seminar@jiazhaomath.github.io
 DTSTAMP:20260928T000000Z
 DTSTART:20261113T170000Z
-DTEND:20261113T180000Z
+DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
  n the mass-spring systems
-DESCRIPTION:Vadim Zharnitsky\, Department of Mathematics\, University of Il
- linois Urbana-Champaign\nOptimal damping in the mass-spring systems\nIt is
-  a well-known textbook example in classical mechanics that a single-degree
- -of-freedom mass-spring harmonic oscillator achieves its fastest exponenti
- al decay when the damping is critical. We study the analogous problem of d
- esigning optimal damping for a system of several coupled linear oscillator
- s. Using the Weyl–Horn theorem\, we construct an explicit damping matrix
-  that theoretically realizes the best possible exponential decay rate of t
- he system\, which turns out to be the geometric mean of the natural freque
- ncies. We show that this damping strategy outperforms the classical Raylei
- gh (proportional) damping approach. We also characterize the parameter reg
- imes in which the optimal damping matrix necessarily ceases to be positive
-  definite\, and discuss the implications of this phenomenon.\n\nThis is a 
- joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (Technion\, I
- srael).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
+DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
+ ersity of Illinois Urbana-Champaign\nOptimal damping in the mass-spring sy
+ stems\nIt is a well-known textbook example in classical mechanics that a s
+ ingle-degree-of-freedom mass-spring harmonic oscillator achieves its faste
+ st exponential decay when the damping is critical. We study the analogous 
+ problem of designing optimal damping for a system of several coupled linea
+ r oscillators. Using the Weyl–Horn theorem\, we construct an explicit da
+ mping matrix that theoretically realizes the best possible exponential dec
+ ay rate of the system\, which turns out to be the geometric mean of the na
+ tural frequencies. We show that this damping strategy outperforms the clas
+ sical Rayleigh (proportional) damping approach. We also characterize the p
+ arameter regimes in which the optimal damping matrix necessarily ceases to
+  be positive definite\, and discuss the implications of this phenomenon.\n
+ \nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (
+ Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
+ 2026-11-13
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 END:VCALENDAR

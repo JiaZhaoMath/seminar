@@ -85,7 +85,8 @@ class BuildTest(unittest.TestCase):
 
     def test_privacy_generated(self):
         for path in self.generated():
-            text = path.read_text(encoding="utf-8")
+            # The build's own placeholder for an unknown title is the one allowed "TBA".
+            text = path.read_text(encoding="utf-8").replace(build.TITLE_TBA, "")
             for pat in FORBIDDEN:
                 m = re.search(pat, text, re.I)
                 self.assertIsNone(m, f"{path.relative_to(self.out)} contains {m and m.group(0)!r}")
@@ -119,10 +120,14 @@ class BuildTest(unittest.TestCase):
     def test_defaults_and_omissions(self):
         laiu = self.index.split('id="2026-11-06"', 1)[1].split("</article>", 1)[0]
         self.assertIn("11:00–11:50 AM", laiu)
+        self.assertIn('<h3 class="talk-title">Title TBA</h3>', laiu)
         self.assertNotIn("GP ", laiu)                      # no room is guessed
         self.assertNotIn("Flyer", laiu)                    # no title, no flyer
         z = self.index.split('id="2026-11-13"', 1)[1].split("</article>", 1)[0]
-        self.assertIn("11:00 AM–12:00 PM", z)              # series default slot
+        self.assertIn("11:00–11:50 AM", z)                 # series default slot
+        self.assertIn("Fridays, 11:00–11:50 AM Central time", self.index)
+        g = self.index.split('id="2026-11-20"', 1)[1].split("</article>", 1)[0]
+        self.assertIn("Postdoc, Department of Mathematics &amp; Statistics, Texas Tech University", g)
         self.assertIn("<i>p</i>-Laplace", self.index)      # $p$ in italics
 
     def test_reserved_slot(self):
@@ -148,9 +153,9 @@ class BuildTest(unittest.TestCase):
         self.assertTrue(blocks[0].startswith("Applied Mathematics Seminar, 2026–2027"))
         self.assertIn("Friday, October 16, 2026, 10:00–10:50 AM, GP 208\nAina G. Irbe, Accessible Minds\n", text)
         laiu = next(b for b in blocks if "Laiu" in b)
-        self.assertEqual(laiu, "Friday, November 6, 2026, 11:00–11:50 AM\nPaul Laiu, Oak Ridge National Laboratory")
+        self.assertEqual(laiu, "Friday, November 6, 2026, 11:00–11:50 AM\nPaul Laiu, Oak Ridge National Laboratory\nTitle TBA")
         z = next(b for b in blocks if "Zharnitsky" in b)
-        self.assertIn("11:00 AM–12:00 PM\n", z)               # default slot, no room guessed
+        self.assertIn("11:00–11:50 AM\n", z)                  # default slot, no room guessed
         self.assertNotIn("$", text)
         self.assertNotIn("\r", text)
 
@@ -174,6 +179,9 @@ class BuildTest(unittest.TestCase):
         self.assertIn("DTSTART:20261002T160000Z", feed)   # 11:00 CDT
         self.assertIn("DTSTART:20261016T150000Z", feed)   # 10:00 CDT
         self.assertIn("DTSTART:20261113T170000Z", feed)   # 11:00 CST, after Nov 1
+        self.assertIn("DTEND:20261113T175000Z", feed)     # default end 11:50 CST
+        laiu = (self.out / "ics" / "2026-11-06.ics").read_text(encoding="utf-8").replace("\r\n ", "")
+        self.assertIn("Paul Laiu — Title TBA", laiu)
 
     # ---- HTML integrity
 

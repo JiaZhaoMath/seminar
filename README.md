@@ -1,7 +1,7 @@
 # Applied Mathematics Seminar — website
 
 Website for the **Applied Mathematics Seminar**, Department of Mathematics, The University of Alabama.
-Fridays, 11:00 AM–12:00 PM Central time. Organizer: Jia Zhao (jia.zhao@ua.edu).
+Fridays, 11:00–11:50 AM Central time. Organizer: Jia Zhao (jia.zhao@ua.edu).
 
 Live site: https://jiazhaomath.github.io/seminar/
 
@@ -49,7 +49,8 @@ Never edit the generated files by hand; the next build overwrites them.
    ```
 
    Only `date` and `speaker` are required. Leave out anything not yet known and never write "TBA":
-   the page simply shows the fields that exist. `start`/`end` default to the regular slot (11:00–12:00);
+   the page simply shows the fields that exist (a missing title is shown as "Title TBA" automatically).
+   `start`/`end` default to the regular slot (11:00–11:50 AM);
    a missing `room` is left off the page. For an unusual time or room also add `note = "…"`, which is highlighted.
 
 2. To hold a date before the speaker can be named, add `reserved = true` instead of a speaker. The page shows
