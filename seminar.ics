@@ -1,0 +1,226 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20260911-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20260911T160000Z
+DTEND:20260911T165000Z
+SUMMARY:Applied Mathematics Seminar: Matthias Dogbatsey — A Diffuse-Inter
+ face Variational Implicit Solvation Model with the Size-Modified Poisson-B
+ oltzmann Equation: Formulation\, Numerical Computation\, and Stern-Layer F
+ ormation
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Matthias Dogbatsey\, PhD student\, Department of Mathematics\, 
+ The University of Alabama\nA Diffuse-Interface Variational Implicit Solvat
+ ion Model with the Size-Modified Poisson-Boltzmann Equation: Formulation\,
+  Numerical Computation\, and Stern-Layer Formation\nDiffuse-interface vari
+ ational implicit solvation models (VISMs) enable efficient computation of 
+ ensemble average solvation energies without costly molecular dynamics samp
+ ling. However\, the underlying coupled nonlinear PDEs remain computational
+ ly demanding\, and the classical Poisson–Boltzmann model neglects finite
+  ion size\, predicting unphysically high concentrations near molecular sur
+ faces. We present the first numerical realization of the diffuse-interface
+  VISM\, developed to date only analytically\, and the first to incorporate
+  steric effects via the fully nonlinear size-modified Poisson–Boltzmann 
+ (SMPB) equation\, coupled to a p-Laplace equation that determines the solu
+ te-solvent interface variationally rather than prescribing it. Our solver 
+ combines an alternating direction implicit scheme with an inexact Newton
+ –Krylov method\, stabilized by a coupling relaxation strategy. We valida
+ te against manufactured solutions and biomolecular benchmarks\, and show t
+ hat both steric ion effects and short-range Lennard-Jones repulsion are re
+ quired for a Stern layer to emerge.\nhttps://jiazhaomath.github.io/seminar
+ /2026-2027.html#2026-09-11
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-11
+END:VEVENT
+BEGIN:VEVENT
+UID:20260925-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20260925T160000Z
+DTEND:20260925T165000Z
+SUMMARY:Applied Mathematics Seminar: Zheng Sun — OEDG: Oscillation-Elimin
+ ating Discontinuous Galerkin Method for Hyperbolic Conservation Laws
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Zheng Sun\, Associate Professor\, Department of Mathematics\, T
+ he University of Alabama\nOEDG: Oscillation-Eliminating Discontinuous Gale
+ rkin Method for Hyperbolic Conservation Laws\nControlling spurious oscilla
+ tions is crucial for designing reliable numerical schemes for hyperbolic c
+ onservation laws. In this talk\, we propose a novel\, robust\, and efficie
+ nt oscillation-eliminating discontinuous Galerkin (OEDG) method on general
+  meshes\, motivated by the damping technique in [Lu\, Liu\, and Shu\, SIAM
+  J. Numer. Anal.\, 59:1299–1324\, 2021]. The OEDG method incorporates an
+  OE procedure after each Runge–Kutta stage\, and it is devised by altern
+ ately evolving the conventional semidiscrete DG scheme and a damping equat
+ ion. A novel damping operator is designed to possess both scale-invariant 
+ and evolution-invariant properties. We rigorously prove optimal error esti
+ mates of the fully discrete OEDG method for smooth solutions of linear sca
+ lar conservation laws. The OEDG method exhibits many notable advantages. I
+ t effectively eliminates spurious oscillations for problems spanning vario
+ us scales and wave speeds without problem-specific parameters. Furthermore
+ \, it retains the key properties of the conventional DG method\, such as c
+ onservation\, optimal convergence rates\, and superconvergence. Moreover\,
+  the OEDG method maintains stability under the normal CFL condition\, even
+  in the presence of strong shocks associated with highly stiff damping ter
+ ms. The OE procedure is non-intrusive\, facilitating seamless integration 
+ into existing DG codes as an independent module. Extensive numerical resul
+ ts confirm the analysis and validate the effectiveness of the OEDG method.
+ \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
+END:VEVENT
+BEGIN:VEVENT
+UID:20261002-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261002T160000Z
+DTEND:20261002T165000Z
+SUMMARY:Applied Mathematics Seminar: Keren Li — Representative Learning: 
+ From Point Representatives to Distributed AI
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Keren Li\, Assistant Professor\, Department of Mathematics\, Un
+ iversity of Alabama at Birmingham\nRepresentative Learning: From Point Rep
+ resentatives to Distributed AI\nDistributed machine learning traditionally
+  relies on exchanging gradients\, model parameters\, or predictions across
+  computing nodes. Such communication can become inefficient and unstable w
+ hen data are heterogeneous or communication is asynchronous. In this talk\
+ , I present Representative Learning (RepL)\, a framework that replaces mod
+ el-based communication with the exchange of representative data objects th
+ at summarize local statistical information while preserving privacy and in
+ terpretability.\n\nI will describe the evolution of RepL from simple point
+  representatives to score-preserving and distribution-valued representatio
+ ns\, highlighting recent developments in stability\, identifiability\, and
+  heterogeneity-aware learning. I will also discuss extensions to collabora
+ tive learning\, clouded representatives based on lifted empirical risk\, a
+ nd distributed AI systems that communicate information at the data level r
+ ather than the model level. The talk concludes with current challenges and
+  future directions toward a unified framework for distributed AI under het
+ erogeneity and communication constraints.\nhttps://jiazhaomath.github.io/s
+ eminar/2026-2027.html#2026-10-02
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-02
+END:VEVENT
+BEGIN:VEVENT
+UID:20261009-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261009T160000Z
+DTEND:20261009T165000Z
+SUMMARY:Applied Mathematics Seminar: Baoli Hao — What Can Ionic Transport
+  Data Reveal About Steric Interactions?
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Baoli Hao\, Ph.D. candidate in Applied Mathematics\, Illinois I
+ nstitute of Technology\nWhat Can Ionic Transport Data Reveal About Steric 
+ Interactions?\nTo what extent can microscopic interactions be inferred fro
+ m observable dynamics? We investigate this question in ionic transport\, w
+ here steric interactions may operate at scales beyond experimental resolut
+ ion. Within a unified energy-dissipation framework\, we develop a hierarch
+ y of local\, higher-order\, and nonlocal constitutive models to investigat
+ e what can be learned from dynamical observations. By connecting interacti
+ on scales and observational information with identifiability\, model stabi
+ lity\, and predictive accuracy\, we determine the level of constitutive co
+ mplexity supported by the data. Our study highlights the distinction betwe
+ en recovering microscopic interactions and identifying their observable dy
+ namical effects\, providing a general perspective on data-driven coarse-gr
+ aining and the limits of learning multiscale physics from finite-resolutio
+ n observations.\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026
+ -10-09
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-09
+END:VEVENT
+BEGIN:VEVENT
+UID:20261016-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261016T150000Z
+DTEND:20261016T155000Z
+SUMMARY:Applied Mathematics Seminar: Aina G. Irbe — Towards Inclusive Int
+ elligence: Defining the Research Challenges at the Intersection of Artific
+ ial Intelligence\, Universal Design for Learning\, and Workplace Training
+LOCATION:GP 208\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Aina G. Irbe\, Chief Operating Officer\, Accessible Minds\nTowa
+ rds Inclusive Intelligence: Defining the Research Challenges at the Inters
+ ection of Artificial Intelligence\, Universal Design for Learning\, and Wo
+ rkplace Training\nEarlier time and different room: 10:00 AM in GP 208.\nOr
+ ganizations are increasingly using artificial intelligence (AI) to create 
+ workplace and academic training. AI can generate content quickly\, adapt m
+ aterials to different learners\, and deliver information in text\, audio\,
+  and video. These features seem to align with Universal Design for Learnin
+ g (UDL)\, a framework that supports diverse learners by providing multiple
+  means of engagement\, representation\, and action and expression. However
+ \, being efficient and adaptive is not the same as being inclusive. AI-gen
+ erated training can still overlook barriers related to disability\, access
+ ibility\, language\, cognition\, and knowledge transfer.\n\nThis raises th
+ ree challenges in using AI to develop workplace and academic training: AI 
+ is often optimized for goals that don't reflect inclusive learning\, it ca
+ n introduce new accessibility barriers or amplify existing ones\, and ther
+ e is no practical\, validated way to evaluate training developed with AI. 
+ A proposed six-dimension framework based on UDL and the Web Content Access
+ ibility Guidelines (WCAG) offers a way to assess whether AI-developed trai
+ ning is accessible\, inclusive\, and educationally sound. Three research q
+ uestions and recommendations for future studies outline the next steps nee
+ ded to validate it.\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
+ 2026-10-16
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-16
+END:VEVENT
+BEGIN:VEVENT
+UID:20261106-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261106T170000Z
+DTEND:20261106T175000Z
+SUMMARY:Applied Mathematics Seminar: Paul Laiu
+DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
+ \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+END:VEVENT
+BEGIN:VEVENT
+UID:20261113-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261113T170000Z
+DTEND:20261113T180000Z
+SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
+ n the mass-spring systems
+DESCRIPTION:Vadim Zharnitsky\, Mathematics\, UIUC\nOptimal damping in the m
+ ass-spring systems\nIt is a well-known textbook example in classical mecha
+ nics that a single-degree-of-freedom mass-spring harmonic oscillator achie
+ ves its fastest exponential decay when the damping is critical. We study t
+ he analogous problem of designing optimal damping for a system of several 
+ coupled linear oscillators. Using the Weyl–Horn theorem\, we construct a
+ n explicit damping matrix that theoretically realizes the best possible ex
+ ponential decay rate of the system\, which turns out to be the geometric m
+ ean of the natural frequencies. We show that this damping strategy outperf
+ orms the classical Rayleigh (proportional) damping approach. We also chara
+ cterize the parameter regimes in which the optimal damping matrix necessar
+ ily ceases to be positive definite\, and discuss the implications of this 
+ phenomenon.\n\nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O
+ . Gendelman (Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/20
+ 26-2027.html#2026-11-13
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
+END:VEVENT
+BEGIN:VEVENT
+UID:20261120-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261120T170000Z
+DTEND:20261120T180000Z
+SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
+  Convexification Method Combined with Deep Learning for Electrical Impedan
+ ce Tomography
+DESCRIPTION:Kirill Golubnichiy\, Texas Tech University\nA Semi-Discrete Con
+ vexification Method Combined with Deep Learning for Electrical Impedance T
+ omography\nIn this talk\, we develop a new semi-discrete version of the Ca
+ rleman estimate-based convexification method\, a globally convergent numer
+ ical approach for nonlinear inverse problems. The semi-discrete convexific
+ ation method is used to generate an accurate starting point for the subseq
+ uent deep learning training procedure. An important feature of the continu
+ ous convexification method is that its convergence to the true solution do
+ es not require the availability of a sufficiently accurate initial guess.\
+ n\nWe introduce a new concept of (h)-strong convexity\, where (h) denotes 
+ the grid step size in the semi-discrete formulation. This property enables
+  us to derive an a priori accuracy estimate for the starting point supplie
+ d to the deep learning stage. The proposed approach is applied to the high
+ ly nonlinear inverse problem of Electrical Impedance Tomography. Numerical
+  experiments involving complicated conductivity structures demonstrate the
+  accuracy\, robustness\, and computational feasibility of the combined sem
+ i-discrete convexification and deep learning procedure.\nhttps://jiazhaoma
+ th.github.io/seminar/2026-2027.html#2026-11-20
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
+END:VEVENT
+END:VCALENDAR
