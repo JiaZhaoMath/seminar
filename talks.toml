@@ -35,7 +35,6 @@ timezone = "America/Chicago"
 weekday = "Friday"
 default_start = "11:00"
 default_end = "12:00"
-blurb = "Talks on applied and computational mathematics, followed by lunch. Everyone is welcome."
 
 # One entry per academic year (August 1 through July 31).
 # Open Fridays are derived automatically: every Friday inside a term, from
