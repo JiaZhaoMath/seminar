@@ -1,0 +1,497 @@
+/* Applied Mathematics Seminar, The University of Alabama
+   Hand-written stylesheet, adapted from the UASAM 2026 meeting site
+   (github.com/JiaZhaoMath/UASAM2026) so the two sites look alike.
+   No frameworks, no external fonts or scripts.
+
+   Page structure: each top-level block (masthead, nav, section, footer) is a
+   full-bleed "band" that carries the background; an inner .wrap holds the
+   measure. Sections alternate paper / tint and each opens with a crimson rule,
+   so every section reads as its own block. */
+
+:root {
+  --crimson: #9e1b32;          /* UA crimson */
+  --crimson-deep: #7a1427;
+  --crimson-wash: #eddfe3;     /* shading for breaks in the schedule */
+  --paper: #ffffff;
+  --band: #f5f1f2;             /* alternating section background */
+  --ink: #000000;
+  --ink-body: #2a2a2a;
+  --ink-muted: #5f5f5f;
+  --rule: #d6d6d6;
+  --rule-strong: #8a8a8a;
+  --tbd-bg: #fff4c2;
+  --tbd-ink: #5a4300;
+  --sticky-shadow: 0 1px 0 rgba(0, 0, 0, 0.09), 0 6px 14px rgba(0, 0, 0, 0.07);
+  --measure: 62rem;
+  --measure-wide: 78rem;
+  --nav-height: 4.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --crimson: #e2647b;
+    --crimson-deep: #f08ea0;
+    --crimson-wash: #3d1922;
+    --paper: #161616;
+    --band: #1e1a1c;
+    --ink: #ffffff;
+    --ink-body: #dcdcdc;
+    --ink-muted: #a3a3a3;
+    --rule: #3a3a3a;
+    --rule-strong: #7a7a7a;
+    --tbd-bg: #4a3a00;
+    --tbd-ink: #ffe9a3;
+    --sticky-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 6px 14px rgba(0, 0, 0, 0.5);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { color-scheme: light dark; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink-body);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, "Times New Roman", serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  border-top: 0.6rem solid var(--crimson);
+}
+
+a {
+  color: var(--crimson);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.15em;
+}
+a:hover { color: var(--crimson-deep); }
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--crimson);
+  outline-offset: 3px;
+}
+
+/* Keep anything scrolled to by a link or by keyboard focus clear of the
+   pinned navigation bar. */
+:is(a, summary, [tabindex]) { scroll-margin-top: calc(var(--nav-height) + 1rem); }
+
+/* Bands and the measure inside them */
+
+.wrap {
+  max-width: var(--measure-wide);
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.band { padding: 4.5rem 0; }
+.band--tint { background: var(--band); }
+
+@media (max-width: 34rem) {
+  .wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .band { padding: 3rem 0; }
+}
+
+/* Masthead */
+
+.masthead { padding: 3rem 0 3.25rem; }
+
+.masthead h1 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4.6vw, 3rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.masthead .when-where {
+  margin: 1.25rem 0 0;
+  font-size: 1.25rem;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.masthead .when-where span { display: block; }
+.masthead .when-where .date { font-weight: 700; }
+
+.masthead .tentative {
+  margin: 1rem 0 0;
+  color: var(--ink-muted);
+  max-width: var(--measure);
+}
+
+.actions {
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+.actions a.primary {
+  display: inline-block;
+  background: var(--crimson);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  text-decoration: none;
+  border-radius: 2px;
+}
+.actions a.primary:hover { background: var(--crimson-deep); color: #fff; }
+.actions li { display: flex; align-items: center; }
+
+/* In-page navigation, pinned to the top while scrolling */
+
+.toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  margin: 0;
+  padding: 0.8rem 0;
+  background: var(--paper);
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+}
+.toc.is-stuck {
+  border-top-color: transparent;
+  box-shadow: var(--sticky-shadow);
+}
+.toc .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 2rem;
+}
+.toc-home {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.toc-home:hover { color: var(--crimson); text-decoration: underline; }
+@media (max-width: 48rem) { .toc-home { display: none; } }
+
+.toc ul {
+  margin: 0 0 0 auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.6rem;
+}
+.toc a:not(.toc-home) {
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+.toc a:not(.toc-home):hover {
+  color: var(--crimson);
+  border-bottom-color: var(--rule-strong);
+}
+.toc a.is-current {
+  color: var(--crimson);
+  font-weight: 700;
+  border-bottom-color: var(--crimson);
+}
+
+/* Keep the pinned bar to a single row on a phone: it stays on screen the whole
+   time, so it must not eat the viewport. --nav-height is the static fallback
+   for the no-JavaScript case; the script replaces it with the measured height. */
+@media (max-width: 34rem) {
+  :root { --nav-height: 6.5rem; }
+  .toc { padding: 0.6rem 0; }
+  .toc ul { gap: 0.25rem 1rem; font-size: 0.95rem; }
+}
+
+/* Sections */
+
+section { scroll-margin-top: var(--nav-height); }
+
+h2 {
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+section h2::before {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 3px;
+  margin-bottom: 1.1rem;
+  background: var(--crimson);
+}
+
+h3 {
+  margin: 1.75rem 0 0.5rem;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+p, ul, ol, dl { max-width: var(--measure); }
+p { margin: 0 0 1rem; }
+
+/* Masthead additions */
+
+.masthead .kicker {
+  margin: 0 0 0.6rem;
+  color: var(--crimson);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Talk cards */
+
+.talk {
+  max-width: var(--measure);
+  padding: 1.25rem 0 1.35rem;
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+.talk:first-of-type { border-top: 1px solid var(--rule-strong); }
+.talk:target {
+  background: var(--crimson-wash);
+  box-shadow: -1rem 0 0 var(--crimson-wash), 1rem 0 0 var(--crimson-wash);
+}
+
+.talk-when {
+  margin: 0 0 0.35rem;
+  color: var(--crimson);
+  font-variant-numeric: tabular-nums;
+}
+.talk-when time { font-weight: 700; }
+.sep { color: var(--ink-muted); }
+
+.talk-note {
+  display: inline-block;
+  margin: 0.1rem 0 0.6rem;
+  padding: 0.1rem 0.55rem;
+  background: var(--tbd-bg);
+  color: var(--tbd-ink);
+  border-radius: 2px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.talk-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.talk-speaker { margin: 0 0 0.4rem; }
+.talk-speaker .name { color: var(--ink); font-weight: 700; }
+.talk-speaker .name + .aff::before { content: ", "; }
+.talk-speaker .aff { color: var(--ink-muted); }
+
+.talk-reserved {
+  margin: 0;
+  color: var(--ink-muted);
+  font-style: italic;
+}
+
+.talk details { margin: 0.35rem 0 0; }
+.talk summary {
+  cursor: pointer;
+  color: var(--crimson);
+  width: max-content;
+  max-width: 100%;
+}
+.talk summary:hover { color: var(--crimson-deep); text-decoration: underline; }
+.talk details p { margin: 0.5rem 0 0; }
+.talk details[open] { padding-bottom: 0.4rem; }
+
+.talk-links {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+}
+
+/* Open dates */
+
+.open-dates {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: 0.5rem;
+}
+.open-dates li {
+  padding: 0.45rem 0.7rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--crimson);
+  font-variant-numeric: tabular-nums;
+}
+.band--tint .open-dates li { background: var(--paper); }
+
+/* About */
+
+dl { margin: 0 0 1rem; }
+dt { font-weight: 700; color: var(--ink); margin-top: 0.75rem; }
+dd { margin: 0.15rem 0 0; }
+
+.years {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+}
+.years [aria-current] { font-weight: 700; color: var(--ink); }
+
+footer {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--rule);
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+footer p { margin: 0; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+@media print {
+  body { border-top: none; color: #000; }
+  .actions, .toc, .talk-links { display: none; }
+  a { color: #000; text-decoration: none; }
+  .band { padding: 1.25rem 0; }
+  .band--tint, .talk:target { background: none; box-shadow: none; }
+  section h2::before { background: #000; }
+  .talk { break-inside: avoid; }
+}
+
+/* Flyer pages (flyers/<date>.html): one talk, one printed page */
+
+body.flyer { border-top: none; background: var(--band); }
+
+.flyer-back {
+  max-width: 8.5in;
+  margin: 1rem auto 0;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+.flyer-page {
+  box-sizing: border-box;
+  max-width: 8.5in;
+  min-height: 11in;
+  margin: 1rem auto 2rem;
+  padding: 0.7in 0.75in 0.6in;
+  background: var(--paper);
+  border-top: 0.45in solid var(--crimson);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+
+.flyer-head { margin-bottom: 1.4rem; }
+.flyer-series {
+  margin: 0;
+  color: var(--crimson);
+  font-size: 1.9rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.flyer-dept { margin: 0.2rem 0 0; color: var(--ink-muted); }
+
+.flyer-when {
+  margin: 0 0 1.25rem;
+  padding: 0.6rem 0;
+  border-top: 1px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule-strong);
+  color: var(--ink);
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.6rem;
+}
+
+.flyer-note {
+  margin: -0.5rem 0 1.1rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--tbd-bg);
+  color: var(--tbd-ink);
+  font-weight: 700;
+}
+
+.flyer-title {
+  margin: 0 0 0.9rem;
+  color: var(--ink);
+  font-size: 2rem;
+  line-height: 1.15;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.flyer-speaker { margin: 0; color: var(--ink); font-size: 1.35rem; font-weight: 700; }
+.flyer-aff { margin: 0.1rem 0 0; color: var(--ink-muted); font-size: 1.05rem; }
+
+.flyer-page section { margin-top: 1.3rem; }
+.flyer-page h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--crimson);
+}
+.flyer-page section p { margin: 0 0 0.6rem; max-width: none; text-align: justify; hyphens: auto; }
+
+.flyer--dense { font-size: 0.95rem; line-height: 1.45; }
+.flyer--dense .flyer-title { font-size: 1.7rem; }
+.flyer--compact { font-size: 0.82rem; line-height: 1.34; }
+.flyer--compact .flyer-head { margin-bottom: 0.9rem; }
+.flyer--compact .flyer-when { font-size: 1.05rem; margin-bottom: 0.9rem; }
+.flyer--compact .flyer-title { font-size: 1.45rem; }
+.flyer--compact .flyer-speaker { font-size: 1.2rem; }
+.flyer--compact section { margin-top: 0.8rem; }
+.flyer-page section h2::before { display: none; }
+
+.flyer-foot {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  color: var(--ink-muted);
+}
+
+@media (max-width: 34rem) {
+  .flyer-page { padding: 1.25rem 1rem; min-height: 0; border-top-width: 0.6rem; }
+  .flyer-title { font-size: 1.5rem; }
+}
+
+@page { size: letter; margin: 0.5in; }
+
+@media print {
+  body.flyer { background: #fff; }
+  .flyer-back { display: none; }
+  .flyer-page {
+    max-width: none;
+    min-height: 9.85in;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.25in;
+    background: #fff;
+    box-shadow: none;
+    border-top: 0.3in solid #9e1b32;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .flyer-series, .flyer-page h2 { color: #9e1b32; }
+  .flyer-page, .flyer-title, .flyer-speaker, .flyer-when { color: #000; }
+  .flyer-aff, .flyer-dept, .flyer-foot { color: #444; }
+  .flyer-note { background: #fff4c2; color: #000; }
+}

@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20261002-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261002T160000Z
+DTEND:20261002T165000Z
+SUMMARY:Applied Mathematics Seminar: Keren Li — Representative Learning: 
+ From Point Representatives to Distributed AI
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Keren Li\, Assistant Professor\, Department of Mathematics\, Un
+ iversity of Alabama at Birmingham\nRepresentative Learning: From Point Rep
+ resentatives to Distributed AI\nDistributed machine learning traditionally
+  relies on exchanging gradients\, model parameters\, or predictions across
+  computing nodes. Such communication can become inefficient and unstable w
+ hen data are heterogeneous or communication is asynchronous. In this talk\
+ , I present Representative Learning (RepL)\, a framework that replaces mod
+ el-based communication with the exchange of representative data objects th
+ at summarize local statistical information while preserving privacy and in
+ terpretability.\n\nI will describe the evolution of RepL from simple point
+  representatives to score-preserving and distribution-valued representatio
+ ns\, highlighting recent developments in stability\, identifiability\, and
+  heterogeneity-aware learning. I will also discuss extensions to collabora
+ tive learning\, clouded representatives based on lifted empirical risk\, a
+ nd distributed AI systems that communicate information at the data level r
+ ather than the model level. The talk concludes with current challenges and
+  future directions toward a unified framework for distributed AI under het
+ erogeneity and communication constraints.\nhttps://jiazhaomath.github.io/s
+ eminar/2026-2027.html#2026-10-02
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-02
+END:VEVENT
+END:VCALENDAR

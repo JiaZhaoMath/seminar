@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20260925-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20260925T160000Z
+DTEND:20260925T165000Z
+SUMMARY:Applied Mathematics Seminar: Zheng Sun — OEDG: Oscillation-Elimin
+ ating Discontinuous Galerkin Method for Hyperbolic Conservation Laws
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Zheng Sun\, Associate Professor\, Department of Mathematics\, T
+ he University of Alabama\nOEDG: Oscillation-Eliminating Discontinuous Gale
+ rkin Method for Hyperbolic Conservation Laws\nControlling spurious oscilla
+ tions is crucial for designing reliable numerical schemes for hyperbolic c
+ onservation laws. In this talk\, we propose a novel\, robust\, and efficie
+ nt oscillation-eliminating discontinuous Galerkin (OEDG) method on general
+  meshes\, motivated by the damping technique in [Lu\, Liu\, and Shu\, SIAM
+  J. Numer. Anal.\, 59:1299–1324\, 2021]. The OEDG method incorporates an
+  OE procedure after each Runge–Kutta stage\, and it is devised by altern
+ ately evolving the conventional semidiscrete DG scheme and a damping equat
+ ion. A novel damping operator is designed to possess both scale-invariant 
+ and evolution-invariant properties. We rigorously prove optimal error esti
+ mates of the fully discrete OEDG method for smooth solutions of linear sca
+ lar conservation laws. The OEDG method exhibits many notable advantages. I
+ t effectively eliminates spurious oscillations for problems spanning vario
+ us scales and wave speeds without problem-specific parameters. Furthermore
+ \, it retains the key properties of the conventional DG method\, such as c
+ onservation\, optimal convergence rates\, and superconvergence. Moreover\,
+  the OEDG method maintains stability under the normal CFL condition\, even
+  in the presence of strong shocks associated with highly stiff damping ter
+ ms. The OE procedure is non-intrusive\, facilitating seamless integration 
+ into existing DG codes as an independent module. Extensive numerical resul
+ ts confirm the analysis and validate the effectiveness of the OEDG method.
+ \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
+END:VEVENT
+END:VCALENDAR

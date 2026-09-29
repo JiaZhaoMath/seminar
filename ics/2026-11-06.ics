@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20261106-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261106T170000Z
+DTEND:20261106T175000Z
+SUMMARY:Applied Mathematics Seminar: Paul Laiu
+DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
+ \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+END:VEVENT
+END:VCALENDAR

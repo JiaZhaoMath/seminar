@@ -1,0 +1,43 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20261016-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20261016T150000Z
+DTEND:20261016T155000Z
+SUMMARY:Applied Mathematics Seminar: Aina G. Irbe — Towards Inclusive Int
+ elligence: Defining the Research Challenges at the Intersection of Artific
+ ial Intelligence\, Universal Design for Learning\, and Workplace Training
+LOCATION:GP 208\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Aina G. Irbe\, Chief Operating Officer\, Accessible Minds\nTowa
+ rds Inclusive Intelligence: Defining the Research Challenges at the Inters
+ ection of Artificial Intelligence\, Universal Design for Learning\, and Wo
+ rkplace Training\nEarlier time and different room: 10:00 AM in GP 208.\nOr
+ ganizations are increasingly using artificial intelligence (AI) to create 
+ workplace and academic training. AI can generate content quickly\, adapt m
+ aterials to different learners\, and deliver information in text\, audio\,
+  and video. These features seem to align with Universal Design for Learnin
+ g (UDL)\, a framework that supports diverse learners by providing multiple
+  means of engagement\, representation\, and action and expression. However
+ \, being efficient and adaptive is not the same as being inclusive. AI-gen
+ erated training can still overlook barriers related to disability\, access
+ ibility\, language\, cognition\, and knowledge transfer.\n\nThis raises th
+ ree challenges in using AI to develop workplace and academic training: AI 
+ is often optimized for goals that don't reflect inclusive learning\, it ca
+ n introduce new accessibility barriers or amplify existing ones\, and ther
+ e is no practical\, validated way to evaluate training developed with AI. 
+ A proposed six-dimension framework based on UDL and the Web Content Access
+ ibility Guidelines (WCAG) offers a way to assess whether AI-developed trai
+ ning is accessible\, inclusive\, and educationally sound. Three research q
+ uestions and recommendations for future studies outline the next steps nee
+ ded to validate it.\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
+ 2026-10-16
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-16
+END:VEVENT
+END:VCALENDAR

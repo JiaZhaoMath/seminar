@@ -1,0 +1,41 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20260911-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20260928T000000Z
+DTSTART:20260911T160000Z
+DTEND:20260911T165000Z
+SUMMARY:Applied Mathematics Seminar: Matthias Dogbatsey — A Diffuse-Inter
+ face Variational Implicit Solvation Model with the Size-Modified Poisson-B
+ oltzmann Equation: Formulation\, Numerical Computation\, and Stern-Layer F
+ ormation
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
+DESCRIPTION:Matthias Dogbatsey\, PhD student\, Department of Mathematics\, 
+ The University of Alabama\nA Diffuse-Interface Variational Implicit Solvat
+ ion Model with the Size-Modified Poisson-Boltzmann Equation: Formulation\,
+  Numerical Computation\, and Stern-Layer Formation\nDiffuse-interface vari
+ ational implicit solvation models (VISMs) enable efficient computation of 
+ ensemble average solvation energies without costly molecular dynamics samp
+ ling. However\, the underlying coupled nonlinear PDEs remain computational
+ ly demanding\, and the classical Poisson–Boltzmann model neglects finite
+  ion size\, predicting unphysically high concentrations near molecular sur
+ faces. We present the first numerical realization of the diffuse-interface
+  VISM\, developed to date only analytically\, and the first to incorporate
+  steric effects via the fully nonlinear size-modified Poisson–Boltzmann 
+ (SMPB) equation\, coupled to a p-Laplace equation that determines the solu
+ te-solvent interface variationally rather than prescribing it. Our solver 
+ combines an alternating direction implicit scheme with an inexact Newton
+ –Krylov method\, stabilized by a coupling relaxation strategy. We valida
+ te against manufactured solutions and biomolecular benchmarks\, and show t
+ hat both steric ion effects and short-range Lennard-Jones repulsion are re
+ quired for a Stern layer to emerge.\nhttps://jiazhaomath.github.io/seminar
+ /2026-2027.html#2026-09-11
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-11
+END:VEVENT
+END:VCALENDAR
