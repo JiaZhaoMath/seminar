@@ -139,26 +139,26 @@ LOCATION:GP 208\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Aina G. Irbe\, Chief Operating Officer\, Accessible Minds\nTowa
  rds Inclusive Intelligence: Defining the Research Challenges at the Inters
  ection of Artificial Intelligence\, Universal Design for Learning\, and Wo
- rkplace Training\nEarlier time and different room: 10:00 AM in GP 208.\nOr
- ganizations are increasingly using artificial intelligence (AI) to create 
- workplace and academic training. AI can generate content quickly\, adapt m
- aterials to different learners\, and deliver information in text\, audio\,
-  and video. These features seem to align with Universal Design for Learnin
- g (UDL)\, a framework that supports diverse learners by providing multiple
-  means of engagement\, representation\, and action and expression. However
- \, being efficient and adaptive is not the same as being inclusive. AI-gen
- erated training can still overlook barriers related to disability\, access
- ibility\, language\, cognition\, and knowledge transfer.\n\nThis raises th
- ree challenges in using AI to develop workplace and academic training: AI 
- is often optimized for goals that don't reflect inclusive learning\, it ca
- n introduce new accessibility barriers or amplify existing ones\, and ther
- e is no practical\, validated way to evaluate training developed with AI. 
- A proposed six-dimension framework based on UDL and the Web Content Access
- ibility Guidelines (WCAG) offers a way to assess whether AI-developed trai
- ning is accessible\, inclusive\, and educationally sound. Three research q
- uestions and recommendations for future studies outline the next steps nee
- ded to validate it.\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
- 2026-10-16
+ rkplace Training\nEarlier time and different room: 10:00–10:50 AM in GP 
+ 208.\nOrganizations are increasingly using artificial intelligence (AI) to
+  create workplace and academic training. AI can generate content quickly\,
+  adapt materials to different learners\, and deliver information in text\,
+  audio\, and video. These features seem to align with Universal Design for
+  Learning (UDL)\, a framework that supports diverse learners by providing 
+ multiple means of engagement\, representation\, and action and expression.
+  However\, being efficient and adaptive is not the same as being inclusive
+ . AI-generated training can still overlook barriers related to disability\
+ , accessibility\, language\, cognition\, and knowledge transfer.\n\nThis r
+ aises three challenges in using AI to develop workplace and academic train
+ ing: AI is often optimized for goals that don't reflect inclusive learning
+ \, it can introduce new accessibility barriers or amplify existing ones\, 
+ and there is no practical\, validated way to evaluate training developed w
+ ith AI. A proposed six-dimension framework based on UDL and the Web Conten
+ t Accessibility Guidelines (WCAG) offers a way to assess whether AI-develo
+ ped training is accessible\, inclusive\, and educationally sound. Three re
+ search questions and recommendations for future studies outline the next s
+ teps needed to validate it.\nhttps://jiazhaomath.github.io/seminar/2026-20
+ 27.html#2026-10-16
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-16
 END:VEVENT
 BEGIN:VEVENT
@@ -166,61 +166,64 @@ UID:20261106-applied-math-seminar@jiazhaomath.github.io
 DTSTAMP:20260928T000000Z
 DTSTART:20261106T170000Z
 DTEND:20261106T175000Z
-SUMMARY:Applied Mathematics Seminar: Paul Laiu
+SUMMARY:Applied Mathematics Seminar: Paul Laiu — Title TBA
 DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
- \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+ \nTitle TBA\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-
+ 06
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
 END:VEVENT
 BEGIN:VEVENT
 UID:20261113-applied-math-seminar@jiazhaomath.github.io
 DTSTAMP:20260928T000000Z
 DTSTART:20261113T170000Z
-DTEND:20261113T180000Z
+DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
  n the mass-spring systems
-DESCRIPTION:Vadim Zharnitsky\, Department of Mathematics\, University of Il
- linois Urbana-Champaign\nOptimal damping in the mass-spring systems\nIt is
-  a well-known textbook example in classical mechanics that a single-degree
- -of-freedom mass-spring harmonic oscillator achieves its fastest exponenti
- al decay when the damping is critical. We study the analogous problem of d
- esigning optimal damping for a system of several coupled linear oscillator
- s. Using the Weyl–Horn theorem\, we construct an explicit damping matrix
-  that theoretically realizes the best possible exponential decay rate of t
- he system\, which turns out to be the geometric mean of the natural freque
- ncies. We show that this damping strategy outperforms the classical Raylei
- gh (proportional) damping approach. We also characterize the parameter reg
- imes in which the optimal damping matrix necessarily ceases to be positive
-  definite\, and discuss the implications of this phenomenon.\n\nThis is a 
- joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (Technion\, I
- srael).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
+DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
+ ersity of Illinois Urbana-Champaign\nOptimal damping in the mass-spring sy
+ stems\nIt is a well-known textbook example in classical mechanics that a s
+ ingle-degree-of-freedom mass-spring harmonic oscillator achieves its faste
+ st exponential decay when the damping is critical. We study the analogous 
+ problem of designing optimal damping for a system of several coupled linea
+ r oscillators. Using the Weyl–Horn theorem\, we construct an explicit da
+ mping matrix that theoretically realizes the best possible exponential dec
+ ay rate of the system\, which turns out to be the geometric mean of the na
+ tural frequencies. We show that this damping strategy outperforms the clas
+ sical Rayleigh (proportional) damping approach. We also characterize the p
+ arameter regimes in which the optimal damping matrix necessarily ceases to
+  be positive definite\, and discuss the implications of this phenomenon.\n
+ \nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (
+ Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
+ 2026-11-13
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 BEGIN:VEVENT
 UID:20261120-applied-math-seminar@jiazhaomath.github.io
 DTSTAMP:20260928T000000Z
 DTSTART:20261120T170000Z
-DTEND:20261120T180000Z
+DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
   Convexification Method Combined with Deep Learning for Electrical Impedan
  ce Tomography
-DESCRIPTION:Kirill Golubnichiy\, Texas Tech University\nA Semi-Discrete Con
- vexification Method Combined with Deep Learning for Electrical Impedance T
- omography\nIn this talk\, we develop a new semi-discrete version of the Ca
- rleman estimate-based convexification method\, a globally convergent numer
- ical approach for nonlinear inverse problems. The semi-discrete convexific
- ation method is used to generate an accurate starting point for the subseq
- uent deep learning training procedure. An important feature of the continu
- ous convexification method is that its convergence to the true solution do
- es not require the availability of a sufficiently accurate initial guess.\
- n\nWe introduce a new concept of (h)-strong convexity\, where (h) denotes 
- the grid step size in the semi-discrete formulation. This property enables
-  us to derive an a priori accuracy estimate for the starting point supplie
- d to the deep learning stage. The proposed approach is applied to the high
- ly nonlinear inverse problem of Electrical Impedance Tomography. Numerical
-  experiments involving complicated conductivity structures demonstrate the
-  accuracy\, robustness\, and computational feasibility of the combined sem
- i-discrete convexification and deep learning procedure.\nhttps://jiazhaoma
- th.github.io/seminar/2026-2027.html#2026-11-20
+DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
+ istics\, Texas Tech University\nA Semi-Discrete Convexification Method Com
+ bined with Deep Learning for Electrical Impedance Tomography\nIn this talk
+ \, we develop a new semi-discrete version of the Carleman estimate-based c
+ onvexification method\, a globally convergent numerical approach for nonli
+ near inverse problems. The semi-discrete convexification method is used to
+  generate an accurate starting point for the subsequent deep learning trai
+ ning procedure. An important feature of the continuous convexification met
+ hod is that its convergence to the true solution does not require the avai
+ lability of a sufficiently accurate initial guess.\n\nWe introduce a new c
+ oncept of (h)-strong convexity\, where (h) denotes the grid step size in t
+ he semi-discrete formulation. This property enables us to derive an a prio
+ ri accuracy estimate for the starting point supplied to the deep learning 
+ stage. The proposed approach is applied to the highly nonlinear inverse pr
+ oblem of Electrical Impedance Tomography. Numerical experiments involving 
+ complicated conductivity structures demonstrate the accuracy\, robustness\
+ , and computational feasibility of the combined semi-discrete convexificat
+ ion and deep learning procedure.\nhttps://jiazhaomath.github.io/seminar/20
+ 26-2027.html#2026-11-20
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 END:VCALENDAR

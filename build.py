@@ -144,6 +144,10 @@ def esc(s) -> str:
     return html.escape(str(s), quote=True)
 
 
+# Shown for a booked talk whose title is not known yet (talks.toml never says "TBA").
+TITLE_TBA = "Title TBA"
+
+
 def fmt_time(t: dt.time, meridiem=True) -> str:
     h = t.hour % 12 or 12
     s = f"{h}:{t.minute:02d}"
@@ -230,14 +234,9 @@ def talk_card(t: dict, s: dict, *, upcoming: bool) -> str:
     name = esc(t["speaker"])
     if t.get("webpage"):
         name = f'<a href="{esc(t["webpage"])}">{name}</a>'
-    if t.get("title"):
-        parts.append(f'<h3 class="talk-title">{esc(t["title"])}</h3>')
-        parts.append(f'<p class="talk-speaker"><span class="name">{name}</span>'
-                     + (f'<span class="aff">{esc(who(t))}</span>' if who(t) else "") + "</p>")
-    else:
-        parts.append(f'<h3 class="talk-title">{name}</h3>')
-        if who(t):
-            parts.append(f'<p class="talk-speaker"><span class="aff">{esc(who(t))}</span></p>')
+    parts.append(f'<h3 class="talk-title">{esc(t.get("title") or TITLE_TBA)}</h3>')
+    parts.append(f'<p class="talk-speaker"><span class="name">{name}</span>'
+                 + (f'<span class="aff">{esc(who(t))}</span>' if who(t) else "") + "</p>")
     if t.get("abstract"):
         parts.append(f"<details><summary>Abstract</summary>\n{rich(t['abstract'])}\n</details>")
     if t.get("bio"):
@@ -394,8 +393,7 @@ def schedule_text(y: dict, s: dict) -> str:
         if t.get("room"):
             when.append(t["room"])
         lines = [", ".join(when), ", ".join(x for x in (t["speaker"], t.get("affiliation")) if x)]
-        if t.get("title"):
-            lines.append(strip(t["title"]))
+        lines.append(strip(t.get("title") or TITLE_TBA))
         blocks.append("\n".join(lines))
     return "\n\n".join(blocks) + "\n"
 
@@ -433,10 +431,8 @@ def ics_calendar(talks: list[dict], s: dict, stamp: dt.date) -> bytes:
             continue
         d = t["date"]
         url = f"{s['site_url']}{t['year']['id']}.html#{d.isoformat()}"
-        summary = f"{s['title']}: {t['speaker']}" + (f" — {t['title']}" if t.get("title") else "")
-        desc = [t["speaker"] + (f", {who(t)}" if who(t) else "")]
-        if t.get("title"):
-            desc.append(t["title"])
+        summary = f"{s['title']}: {t['speaker']} — {t.get('title') or TITLE_TBA}"
+        desc = [t["speaker"] + (f", {who(t)}" if who(t) else ""), t.get("title") or TITLE_TBA]
         if t.get("note"):
             desc.append(t["note"])
         if t.get("abstract"):

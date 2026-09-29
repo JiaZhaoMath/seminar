@@ -24,11 +24,12 @@ Towards Inclusive Intelligence: Defining the Research Challenges at the Intersec
 
 Friday, November 6, 2026, 11:00–11:50 AM
 Paul Laiu, Oak Ridge National Laboratory
+Title TBA
 
-Friday, November 13, 2026, 11:00 AM–12:00 PM
+Friday, November 13, 2026, 11:00–11:50 AM
 Vadim Zharnitsky, University of Illinois Urbana-Champaign
 Optimal damping in the mass-spring systems
 
-Friday, November 20, 2026, 11:00 AM–12:00 PM
+Friday, November 20, 2026, 11:00–11:50 AM
 Kirill Golubnichiy, Texas Tech University
 A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography

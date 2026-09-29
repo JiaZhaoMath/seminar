@@ -10,28 +10,29 @@ BEGIN:VEVENT
 UID:20261120-applied-math-seminar@jiazhaomath.github.io
 DTSTAMP:20260928T000000Z
 DTSTART:20261120T170000Z
-DTEND:20261120T180000Z
+DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
   Convexification Method Combined with Deep Learning for Electrical Impedan
  ce Tomography
-DESCRIPTION:Kirill Golubnichiy\, Texas Tech University\nA Semi-Discrete Con
- vexification Method Combined with Deep Learning for Electrical Impedance T
- omography\nIn this talk\, we develop a new semi-discrete version of the Ca
- rleman estimate-based convexification method\, a globally convergent numer
- ical approach for nonlinear inverse problems. The semi-discrete convexific
- ation method is used to generate an accurate starting point for the subseq
- uent deep learning training procedure. An important feature of the continu
- ous convexification method is that its convergence to the true solution do
- es not require the availability of a sufficiently accurate initial guess.\
- n\nWe introduce a new concept of (h)-strong convexity\, where (h) denotes 
- the grid step size in the semi-discrete formulation. This property enables
-  us to derive an a priori accuracy estimate for the starting point supplie
- d to the deep learning stage. The proposed approach is applied to the high
- ly nonlinear inverse problem of Electrical Impedance Tomography. Numerical
-  experiments involving complicated conductivity structures demonstrate the
-  accuracy\, robustness\, and computational feasibility of the combined sem
- i-discrete convexification and deep learning procedure.\nhttps://jiazhaoma
- th.github.io/seminar/2026-2027.html#2026-11-20
+DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
+ istics\, Texas Tech University\nA Semi-Discrete Convexification Method Com
+ bined with Deep Learning for Electrical Impedance Tomography\nIn this talk
+ \, we develop a new semi-discrete version of the Carleman estimate-based c
+ onvexification method\, a globally convergent numerical approach for nonli
+ near inverse problems. The semi-discrete convexification method is used to
+  generate an accurate starting point for the subsequent deep learning trai
+ ning procedure. An important feature of the continuous convexification met
+ hod is that its convergence to the true solution does not require the avai
+ lability of a sufficiently accurate initial guess.\n\nWe introduce a new c
+ oncept of (h)-strong convexity\, where (h) denotes the grid step size in t
+ he semi-discrete formulation. This property enables us to derive an a prio
+ ri accuracy estimate for the starting point supplied to the deep learning 
+ stage. The proposed approach is applied to the highly nonlinear inverse pr
+ oblem of Electrical Impedance Tomography. Numerical experiments involving 
+ complicated conductivity structures demonstrate the accuracy\, robustness\
+ , and computational feasibility of the combined semi-discrete convexificat
+ ion and deep learning procedure.\nhttps://jiazhaomath.github.io/seminar/20
+ 26-2027.html#2026-11-20
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 END:VCALENDAR
