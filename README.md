@@ -19,6 +19,7 @@ Sibling site: [UASAM 2026](https://jiazhaomath.github.io/UASAM2026/), whose styl
 | `seminar.ics` | Generated: calendar feed with every talk (subscribe with `webcal://jiazhaomath.github.io/seminar/seminar.ics`) |
 | `ics/<date>.ics` | Generated: "Add to calendar" file for one talk |
 | `flyers/<date>.html` | Generated: one-page printable flyer for each talk that has a title |
+| `schedule.txt` | Generated: plain-text list of the current year's talks (date, time, room, speaker, affiliation, title) to paste into emails |
 | `tests/test_build.py` | Checks, including a privacy scan of the data and every generated file |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 

@@ -8,6 +8,7 @@ Python 3.11+ standard library only. Writes, next to this script:
   seminar.ics             calendar feed with every talk
   ics/<date>.ics          one calendar file per talk ("Add to calendar")
   flyers/<date>.html      one printable flyer per talk with a title
+  schedule.txt            plain-text list of the current year's talks, for emails
 
 Usage:
   python3 build.py                      # today = current date in Central time
@@ -378,6 +379,27 @@ def flyer_page(t: dict, s: dict) -> str:
                 body, "../style.css", body_class="flyer")
 
 
+# ---------------------------------------------------------------- plain text
+
+def schedule_text(y: dict, s: dict) -> str:
+    """Short listing of one year's talks (date, time, room, speaker, affiliation, title) for emails."""
+    def strip(x):
+        return re.sub(r"\$([^$]+)\$", r"\1", x)
+
+    blocks = [f"{s['title']}, {y['label']}\n{s['department']}, {s['university']}\n{s['site_url']}"]
+    for t in y["talks"]:
+        if t.get("reserved"):
+            continue
+        when = [fmt_date(t["date"]), fmt_range(t["start_t"], t["end_t"])]
+        if t.get("room"):
+            when.append(t["room"])
+        lines = [", ".join(when), ", ".join(x for x in (t["speaker"], t.get("affiliation")) if x)]
+        if t.get("title"):
+            lines.append(strip(t["title"]))
+        blocks.append("\n".join(lines))
+    return "\n\n".join(blocks) + "\n"
+
+
 # ---------------------------------------------------------------- iCalendar
 
 def ics_escape(s: str) -> str:
@@ -462,6 +484,7 @@ def build(data_path: Path, out: Path, today: dt.date) -> dict:
         written.append(f"{y['id']}.html")
         if y is current:
             (out / "index.html").write_text(text, encoding="utf-8")
+            (out / "schedule.txt").write_text(schedule_text(y, s), encoding="utf-8", newline="\n")
     booked = [t for t in data["talks"] if not t.get("reserved")]
     (out / "seminar.ics").write_bytes(ics_calendar(booked, s, today))
     for t in booked:
@@ -487,7 +510,7 @@ def main(argv=None) -> int:
         print(f"error: {e}", file=sys.stderr)
         return 1
     print(f"built {', '.join(r['years'])} (index = {r['current']}) as of {today}: "
-          f"{r['talks']} talks, {r['flyers']} flyers, {r['open']} open dates")
+          f"{r['talks']} talks, {r['flyers']} flyers, {r['open']} open dates, schedule.txt")
     return 0
 
 
