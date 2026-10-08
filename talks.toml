@@ -164,3 +164,11 @@ In this talk, we develop a new semi-discrete version of the Carleman estimate-ba
 
 We introduce a new concept of (h)-strong convexity, where (h) denotes the grid step size in the semi-discrete formulation. This property enables us to derive an a priori accuracy estimate for the starting point supplied to the deep learning stage. The proposed approach is applied to the highly nonlinear inverse problem of Electrical Impedance Tomography. Numerical experiments involving complicated conductivity structures demonstrate the accuracy, robustness, and computational feasibility of the combined semi-discrete convexification and deep learning procedure.
 '''
+
+[[talks]]
+date = 2026-12-04
+speaker = "Chunyan Li"
+position = "Postdoc, Department of Mathematics"
+affiliation = "University of South Carolina"
+start = "11:00"
+end = "11:50"

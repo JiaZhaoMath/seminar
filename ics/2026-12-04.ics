@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//The University of Alabama//Applied Mathematics Seminar build.py//
+ EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:UA Applied Mathematics Seminar
+X-WR-TIMEZONE:America/Chicago
+BEGIN:VEVENT
+UID:20261204-applied-math-seminar@jiazhaomath.github.io
+DTSTAMP:20261007T000000Z
+DTSTART:20261204T170000Z
+DTEND:20261204T175000Z
+SUMMARY:Applied Mathematics Seminar: Chunyan Li — Title TBA
+DESCRIPTION:Chunyan Li\, Postdoc\, Department of Mathematics\, University o
+ f South Carolina\nTitle TBA\nhttps://jiazhaomath.github.io/seminar/2026-20
+ 27.html#2026-12-04
+URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-12-04
+END:VEVENT
+END:VCALENDAR

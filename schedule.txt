@@ -33,3 +33,7 @@ Optimal damping in the mass-spring systems
 Friday, November 20, 2026, 11:00–11:50 AM
 Kirill Golubnichiy, Texas Tech University
 A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography
+
+Friday, December 4, 2026, 11:00–11:50 AM
+Chunyan Li, University of South Carolina
+Title TBA

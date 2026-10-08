@@ -28,8 +28,9 @@ FORBIDDEN = [
 ]
 
 SEED_DATES = ["2026-09-11", "2026-09-25", "2026-10-02", "2026-10-09",
-              "2026-10-16", "2026-11-06", "2026-11-13", "2026-11-20"]
-EXPECTED_OPEN = ["2026-10-23", "2026-12-04",
+              "2026-10-16", "2026-11-06", "2026-11-13", "2026-11-20",
+              "2026-12-04"]
+EXPECTED_OPEN = ["2026-10-23",
                  "2027-01-15", "2027-01-22", "2027-01-29", "2027-02-05", "2027-02-12",
                  "2027-02-19", "2027-02-26", "2027-03-05", "2027-03-12", "2027-03-19",
                  "2027-04-02", "2027-04-16", "2027-04-23", "2027-04-30"]
@@ -96,7 +97,7 @@ class BuildTest(unittest.TestCase):
     def test_all_seed_talks_present(self):
         for d in SEED_DATES:
             self.assertIn(f'id="{d}"', self.index)
-        self.assertEqual(self.result["talks"], 8)
+        self.assertEqual(self.result["talks"], len(SEED_DATES))
 
     def test_open_dates_exact(self):
         section = self.index.split('<section id="open"', 1)[1].split("</section>", 1)[0]
@@ -149,7 +150,7 @@ class BuildTest(unittest.TestCase):
     def test_schedule_txt(self):
         text = (self.out / "schedule.txt").read_text(encoding="utf-8")
         blocks = text.rstrip("\n").split("\n\n")
-        self.assertEqual(len(blocks), 1 + 8)                 # header + one block per talk
+        self.assertEqual(len(blocks), 1 + len(SEED_DATES))                 # header + one block per talk
         self.assertTrue(blocks[0].startswith("Applied Mathematics Seminar, 2026–2027"))
         self.assertIn("Friday, October 16, 2026, 10:00–10:50 AM, GP 208\nAina G. Irbe, Accessible Minds\n", text)
         laiu = next(b for b in blocks if "Laiu" in b)
@@ -172,7 +173,7 @@ class BuildTest(unittest.TestCase):
             self.assertEqual(text.count("BEGIN:VEVENT"), text.count("END:VEVENT"))
             self.assertEqual(text.count("BEGIN:VCALENDAR"), 1)
         feed = (self.out / "seminar.ics").read_text(encoding="utf-8")
-        self.assertEqual(feed.count("BEGIN:VEVENT"), 8)
+        self.assertEqual(feed.count("BEGIN:VEVENT"), len(SEED_DATES))
 
     def test_ics_dst(self):
         feed = (self.out / "seminar.ics").read_text(encoding="utf-8")
