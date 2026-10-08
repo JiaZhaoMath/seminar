@@ -1,3 +1,6 @@
 .DS_Store
 __pycache__/
 *.pyc
+codex_review/
+claude_review/
+*.tmp

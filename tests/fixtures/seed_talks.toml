@@ -1,0 +1,166 @@
+# Applied Mathematics Seminar — the single source of truth for the website.
+#
+# EVERYTHING IN THIS FILE IS PUBLIC: the repository is public on GitHub.
+# Put only what may appear on the website here. Keep hosts, email threads,
+# booking status and other private notes in your own files instead.
+#
+# After editing:  python3 build.py        (then check index.html in a browser)
+#                 python3 -m unittest discover tests
+#                 git add -A && git commit -m "Add talk" && git push
+#
+# A talk needs only `date`. Leave out any field that is not known yet, never
+# write "TBA": the page shows only the fields that are present. A talk with a
+# speaker but no title is shown as "Title TBA" automatically.
+#
+#   date      Friday of the talk (YYYY-MM-DD, no quotes)
+#   speaker   name as the speaker writes it
+#   affiliation, position, webpage
+#   title
+#   start/end "HH:MM", 24-hour, Central time. Default: the series slot below.
+#   room      e.g. "GP 346". Left out when unknown (nothing is guessed).
+#   note      short highlighted notice, e.g. a different time or room
+#   abstract, bio   use '''…''' strings; separate paragraphs with a blank line;
+#                   $x$ is shown in italics
+#   reserved = true   slot is taken but the speaker is not public yet; the
+#                     page shows "Reserved" and nothing else for that date
+
+[series]
+title = "Applied Mathematics Seminar"
+department = "Department of Mathematics"
+university = "The University of Alabama"
+city = "Tuscaloosa, Alabama"
+organizer = "Jia Zhao"
+contact = "jia.zhao@ua.edu"
+site_url = "https://jiazhaomath.github.io/seminar/"
+timezone = "America/Chicago"
+weekday = "Friday"
+default_start = "11:00"
+default_end = "11:50"
+
+# One entry per academic year (August 1 through July 31).
+# Open Fridays are derived automatically: every Friday inside a term, from
+# today on, that is neither blocked nor taken by a talk. Blocked dates are
+# never shown; they only keep a date out of the "open" list.
+[[years]]
+id = "2026-2027"
+terms = [
+  { name = "Fall 2026", start = 2026-08-19, end = 2026-12-04 },
+  { name = "Spring 2027", start = 2027-01-13, end = 2027-04-30 },
+]
+# Study break, Thanksgiving, spring break, Honors Day (UA academic calendar)
+blocked = [2026-10-30, 2026-11-27, 2027-03-26, 2027-04-09]
+
+[[talks]]
+date = 2026-09-11
+speaker = "Matthias Dogbatsey"
+position = "PhD student, Department of Mathematics"
+affiliation = "The University of Alabama"
+title = "A Diffuse-Interface Variational Implicit Solvation Model with the Size-Modified Poisson-Boltzmann Equation: Formulation, Numerical Computation, and Stern-Layer Formation"
+start = "11:00"
+end = "11:50"
+room = "GP 346"
+abstract = '''
+Diffuse-interface variational implicit solvation models (VISMs) enable efficient computation of ensemble average solvation energies without costly molecular dynamics sampling. However, the underlying coupled nonlinear PDEs remain computationally demanding, and the classical Poisson–Boltzmann model neglects finite ion size, predicting unphysically high concentrations near molecular surfaces. We present the first numerical realization of the diffuse-interface VISM, developed to date only analytically, and the first to incorporate steric effects via the fully nonlinear size-modified Poisson–Boltzmann (SMPB) equation, coupled to a $p$-Laplace equation that determines the solute-solvent interface variationally rather than prescribing it. Our solver combines an alternating direction implicit scheme with an inexact Newton–Krylov method, stabilized by a coupling relaxation strategy. We validate against manufactured solutions and biomolecular benchmarks, and show that both steric ion effects and short-range Lennard-Jones repulsion are required for a Stern layer to emerge.
+'''
+
+[[talks]]
+date = 2026-09-25
+speaker = "Zheng Sun"
+position = "Associate Professor, Department of Mathematics"
+affiliation = "The University of Alabama"
+webpage = "https://sites.ua.edu/zsun/"
+title = "OEDG: Oscillation-Eliminating Discontinuous Galerkin Method for Hyperbolic Conservation Laws"
+start = "11:00"
+end = "11:50"
+room = "GP 346"
+abstract = '''
+Controlling spurious oscillations is crucial for designing reliable numerical schemes for hyperbolic conservation laws. In this talk, we propose a novel, robust, and efficient oscillation-eliminating discontinuous Galerkin (OEDG) method on general meshes, motivated by the damping technique in [Lu, Liu, and Shu, SIAM J. Numer. Anal., 59:1299–1324, 2021]. The OEDG method incorporates an OE procedure after each Runge–Kutta stage, and it is devised by alternately evolving the conventional semidiscrete DG scheme and a damping equation. A novel damping operator is designed to possess both scale-invariant and evolution-invariant properties. We rigorously prove optimal error estimates of the fully discrete OEDG method for smooth solutions of linear scalar conservation laws. The OEDG method exhibits many notable advantages. It effectively eliminates spurious oscillations for problems spanning various scales and wave speeds without problem-specific parameters. Furthermore, it retains the key properties of the conventional DG method, such as conservation, optimal convergence rates, and superconvergence. Moreover, the OEDG method maintains stability under the normal CFL condition, even in the presence of strong shocks associated with highly stiff damping terms. The OE procedure is non-intrusive, facilitating seamless integration into existing DG codes as an independent module. Extensive numerical results confirm the analysis and validate the effectiveness of the OEDG method.
+'''
+
+[[talks]]
+date = 2026-10-02
+speaker = "Keren Li"
+position = "Assistant Professor, Department of Mathematics"
+affiliation = "University of Alabama at Birmingham"
+webpage = "https://www.uab.edu/cas/mathematics/people/faculty-directory/keren-li"
+title = "Representative Learning: From Point Representatives to Distributed AI"
+start = "11:00"
+end = "11:50"
+room = "GP 346"
+abstract = '''
+Distributed machine learning traditionally relies on exchanging gradients, model parameters, or predictions across computing nodes. Such communication can become inefficient and unstable when data are heterogeneous or communication is asynchronous. In this talk, I present Representative Learning (RepL), a framework that replaces model-based communication with the exchange of representative data objects that summarize local statistical information while preserving privacy and interpretability.
+
+I will describe the evolution of RepL from simple point representatives to score-preserving and distribution-valued representations, highlighting recent developments in stability, identifiability, and heterogeneity-aware learning. I will also discuss extensions to collaborative learning, clouded representatives based on lifted empirical risk, and distributed AI systems that communicate information at the data level rather than the model level. The talk concludes with current challenges and future directions toward a unified framework for distributed AI under heterogeneity and communication constraints.
+'''
+bio = '''
+Keren Li is a tenure-track Assistant Professor in the Department of Mathematics at the University of Alabama at Birmingham. He earned his Ph.D. from the University of Illinois Chicago and completed postdoctoral training at Northwestern University. His research centers on distributed machine learning, particularly Representative Learning (RepL), a data-centric framework for decentralized AI that addresses challenges arising from heterogeneity and asynchrony in large-scale distributed environments.
+'''
+
+[[talks]]
+date = 2026-10-09
+speaker = "Baoli Hao"
+position = "Ph.D. candidate in Applied Mathematics"
+affiliation = "Illinois Institute of Technology"
+title = "What Can Ionic Transport Data Reveal About Steric Interactions?"
+start = "11:00"
+end = "11:50"
+room = "GP 346"
+abstract = '''
+To what extent can microscopic interactions be inferred from observable dynamics? We investigate this question in ionic transport, where steric interactions may operate at scales beyond experimental resolution. Within a unified energy-dissipation framework, we develop a hierarchy of local, higher-order, and nonlocal constitutive models to investigate what can be learned from dynamical observations. By connecting interaction scales and observational information with identifiability, model stability, and predictive accuracy, we determine the level of constitutive complexity supported by the data. Our study highlights the distinction between recovering microscopic interactions and identifying their observable dynamical effects, providing a general perspective on data-driven coarse-graining and the limits of learning multiscale physics from finite-resolution observations.
+'''
+bio = '''
+Baoli Hao is a Ph.D. candidate in Applied Mathematics at the Illinois Institute of Technology, advised by Professor Chun Liu. His research lies at the intersection of inverse problems and scientific machine learning, with a particular focus on learning hidden dynamical mechanisms from incomplete observational data. His work spans interacting particle systems and nonlinear partial differential equations, emphasizing structure-preserving modeling and the mathematical foundations of data-driven inference.
+'''
+
+[[talks]]
+date = 2026-10-16
+speaker = "Aina G. Irbe"
+position = "Chief Operating Officer"
+affiliation = "Accessible Minds"
+title = "Towards Inclusive Intelligence: Defining the Research Challenges at the Intersection of Artificial Intelligence, Universal Design for Learning, and Workplace Training"
+start = "10:00"
+end = "10:50"
+room = "GP 208"
+note = "Earlier time and different room: 10:00–10:50 AM in GP 208."
+abstract = '''
+Organizations are increasingly using artificial intelligence (AI) to create workplace and academic training. AI can generate content quickly, adapt materials to different learners, and deliver information in text, audio, and video. These features seem to align with Universal Design for Learning (UDL), a framework that supports diverse learners by providing multiple means of engagement, representation, and action and expression. However, being efficient and adaptive is not the same as being inclusive. AI-generated training can still overlook barriers related to disability, accessibility, language, cognition, and knowledge transfer.
+
+This raises three challenges in using AI to develop workplace and academic training: AI is often optimized for goals that don't reflect inclusive learning, it can introduce new accessibility barriers or amplify existing ones, and there is no practical, validated way to evaluate training developed with AI. A proposed six-dimension framework based on UDL and the Web Content Accessibility Guidelines (WCAG) offers a way to assess whether AI-developed training is accessible, inclusive, and educationally sound. Three research questions and recommendations for future studies outline the next steps needed to validate it.
+'''
+bio = '''
+Dr. Aina G. Irbe is a Global Learning Strategist with a PhD in Instructional Design and Educational Technology. Specializing in digital accessibility, inclusion, and Universal Design for Learning, Dr. Irbe leads transformative digital education initiatives across global enterprises, government, and the social impact sector. A Certified Professional in Accessibility Core Competencies (CPACC) through the International Association of Accessibility Professionals (IAAP), Dr. Irbe currently serves as Chief Operating Officer at Accessible Minds.
+
+Dr. Irbe's career spans the public and private sectors, including work at the U.S. Department of State's National Foreign Affairs Training Center (NFATC) and consulting for a range of other government agencies and nonprofit organizations. Previous roles include adjunct professor at George Washington University, and Dr. Irbe coauthored a chapter on accessible e-learning in the International Handbook of E-learning.
+'''
+
+[[talks]]
+date = 2026-11-06
+speaker = "Paul Laiu"
+position = "Staff Mathematician"
+affiliation = "Oak Ridge National Laboratory"
+start = "11:00"
+end = "11:50"
+
+[[talks]]
+date = 2026-11-13
+speaker = "Vadim Zharnitsky"
+position = "Professor, Department of Mathematics"
+affiliation = "University of Illinois Urbana-Champaign"
+title = "Optimal damping in the mass-spring systems"
+abstract = '''
+It is a well-known textbook example in classical mechanics that a single-degree-of-freedom mass-spring harmonic oscillator achieves its fastest exponential decay when the damping is critical. We study the analogous problem of designing optimal damping for a system of several coupled linear oscillators. Using the Weyl–Horn theorem, we construct an explicit damping matrix that theoretically realizes the best possible exponential decay rate of the system, which turns out to be the geometric mean of the natural frequencies. We show that this damping strategy outperforms the classical Rayleigh (proportional) damping approach. We also characterize the parameter regimes in which the optimal damping matrix necessarily ceases to be positive definite, and discuss the implications of this phenomenon.
+
+This is a joint work with M. Arnold (UT-Dallas, USA) and O. Gendelman (Technion, Israel).
+'''
+
+[[talks]]
+date = 2026-11-20
+speaker = "Kirill Golubnichiy"
+position = "Postdoc, Department of Mathematics & Statistics"
+affiliation = "Texas Tech University"
+title = "A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography"
+abstract = '''
+In this talk, we develop a new semi-discrete version of the Carleman estimate-based convexification method, a globally convergent numerical approach for nonlinear inverse problems. The semi-discrete convexification method is used to generate an accurate starting point for the subsequent deep learning training procedure. An important feature of the continuous convexification method is that its convergence to the true solution does not require the availability of a sufficiently accurate initial guess.
+
+We introduce a new concept of (h)-strong convexity, where (h) denotes the grid step size in the semi-discrete formulation. This property enables us to derive an a priori accuracy estimate for the starting point supplied to the deep learning stage. The proposed approach is applied to the highly nonlinear inverse problem of Electrical Impedance Tomography. Numerical experiments involving complicated conductivity structures demonstrate the accuracy, robustness, and computational feasibility of the combined semi-discrete convexification and deep learning procedure.
+'''
