@@ -12,6 +12,7 @@
   --crimson: #9e1b32;          /* UA crimson */
   --crimson-deep: #7a1427;
   --crimson-wash: #eddfe3;     /* shading for breaks in the schedule */
+  --on-crimson: #ffffff;       /* text on a crimson button: 7.9:1, hover 10.7:1 */
   --paper: #ffffff;
   --band: #f5f1f2;             /* alternating section background */
   --ink: #000000;
@@ -32,6 +33,7 @@
     --crimson: #e2647b;
     --crimson-deep: #f08ea0;
     --crimson-wash: #3d1922;
+    --on-crimson: #161616;     /* dark text on the light dark-mode pink: 5.5:1, hover 7.8:1 */
     --paper: #161616;
     --band: #1e1a1c;
     --ink: #ffffff;
@@ -132,12 +134,12 @@ summary:focus-visible {
 .actions a.primary {
   display: inline-block;
   background: var(--crimson);
-  color: #fff;
+  color: var(--on-crimson);
   padding: 0.6rem 1.1rem;
   text-decoration: none;
   border-radius: 2px;
 }
-.actions a.primary:hover { background: var(--crimson-deep); color: #fff; }
+.actions a.primary:hover { background: var(--crimson-deep); color: var(--on-crimson); }
 .actions li { display: flex; align-items: center; }
 
 /* In-page navigation, pinned to the top while scrolling */
@@ -196,8 +198,8 @@ summary:focus-visible {
 }
 
 /* Keep the pinned bar to a single row on a phone: it stays on screen the whole
-   time, so it must not eat the viewport. --nav-height is the static fallback
-   for the no-JavaScript case; the script replaces it with the measured height. */
+   time, so it must not eat the viewport. The site has no JavaScript, so
+   --nav-height is a fixed estimate of the bar's height at this width. */
 @media (max-width: 34rem) {
   :root { --nav-height: 6.5rem; }
   .toc { padding: 0.6rem 0; }

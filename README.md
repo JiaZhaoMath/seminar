@@ -20,7 +20,8 @@ Sibling site: [UASAM 2026](https://jiazhaomath.github.io/UASAM2026/), whose styl
 | `ics/<date>.ics` | Generated: "Add to calendar" file for one talk |
 | `flyers/<date>.html` | Generated: one-page printable flyer for each talk that has a title |
 | `schedule.txt` | Generated: plain-text list of the current year's talks (date, time, room, speaker, affiliation, title) to paste into emails |
-| `tests/test_build.py` | Checks, including a privacy scan of the data and every generated file |
+| `tests/test_build.py` | Checks: a privacy scan of the data (comments included) and every generated file, links, calendar format, and rejection of bad data |
+| `tests/fixtures/seed_talks.toml` | Frozen copy of the September 28, 2026 data for the exact-answer tests. Never edit it |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
 
 Never edit the generated files by hand; the next build overwrites them.
@@ -64,8 +65,10 @@ Never edit the generated files by hand; the next build overwrites them.
    open index.html
    ```
 
-   `build.py` prints how many talks, flyers and open dates it wrote. It stops with a clear error on a typo in a
-   field name, a duplicate date, or a date outside every academic year.
+   `build.py` prints how many talks, flyers and open dates it wrote. It stops with a clear error, before
+   writing anything, on a typo in a field name, a duplicate date or year, a date outside every academic year,
+   an end time that is not after the start time, a quoted `reserved = "true"`, or terms that are reversed,
+   overlap, or fall outside their year. Adding or changing talks never requires editing the tests.
 
 4. Publish:
 
@@ -79,6 +82,11 @@ Never edit the generated files by hand; the next build overwrites them.
 
 "Upcoming", "Past" and "Open dates" are worked out when you run the build. Rebuild and push after a talk
 has happened so that it moves to "Past talks".
+
+Calendar events are identified by their date. Changing a talk's details updates the event in subscribed
+calendars, but moving a talk to another date (or deleting it) makes subscribers see the old event disappear
+and a new one appear; people who downloaded a single `.ics` file keep their copy. For a moved talk, say so in
+the `note` and in the announcement email.
 
 ## Open dates
 

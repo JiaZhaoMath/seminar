@@ -20,15 +20,16 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import html
+import os
 import re
-import shutil
 import sys
 import tomllib
 from pathlib import Path
-from zoneinfo import ZoneInfo
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 ROOT = Path(__file__).resolve().parent
 
+ROOT_KEYS = {"series", "years", "talks"}
 SERIES_KEYS = {
     "title", "department", "university", "city", "organizer", "contact",
     "site_url", "timezone", "weekday", "default_start", "default_end", "blurb",
@@ -49,6 +50,11 @@ class DataError(Exception):
 
 # ---------------------------------------------------------------- data
 
+def is_date(x) -> bool:
+    """A plain TOML date such as 2026-10-02 (a datetime is a date subclass, so exclude it)."""
+    return isinstance(x, dt.date) and not isinstance(x, dt.datetime)
+
+
 def load(path: Path) -> dict:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
     series = data.get("series", {})
@@ -60,32 +66,70 @@ def load(path: Path) -> dict:
         if extra:
             raise DataError(f"{where}: unknown field(s) {sorted(extra)}; allowed: {sorted(allowed)}")
 
+    unknown(data, ROOT_KEYS, "talks.toml")
+    if not isinstance(series, dict):
+        raise DataError("[series] must be a table")
+    for name, items in (("years", years), ("talks", talks)):
+        if not isinstance(items, list) or not all(isinstance(x, dict) for x in items):
+            raise DataError(f"{name} must be written as [[{name}]] blocks")
+
     unknown(series, SERIES_KEYS, "[series]")
     missing = SERIES_KEYS - {"blurb"} - set(series)
     if missing:
         raise DataError(f"[series]: missing {sorted(missing)}")
+    for key in series:
+        if not isinstance(series[key], str):
+            raise DataError(f"[series] {key} must be a quoted string")
+    if not re.match(r"https?://[^/\s]+", series["site_url"]):
+        raise DataError(f"[series] site_url must start with http:// or https://, got {series['site_url']!r}")
     if not series["site_url"].endswith("/"):
         series["site_url"] += "/"
-    series["tz"] = ZoneInfo(series["timezone"])
+    try:
+        series["tz"] = ZoneInfo(series["timezone"])
+    except (ZoneInfoNotFoundError, ValueError):
+        raise DataError(f"[series] timezone {series['timezone']!r} is not a known time zone") from None
     series["start_t"] = parse_time(series["default_start"], "[series] default_start")
     series["end_t"] = parse_time(series["default_end"], "[series] default_end")
+    check_order(series["start_t"], series["end_t"], "[series] default_start/default_end")
+    if series["weekday"] not in WEEKDAYS:
+        raise DataError(f"[series] weekday must be one of {WEEKDAYS}, got {series['weekday']!r}")
     weekday = WEEKDAYS.index(series["weekday"])
 
     if not years:
         raise DataError("no [[years]] entries")
+    ids = set()
     for y in years:
         unknown(y, YEAR_KEYS, f"[[years]] {y.get('id')}")
         m = re.fullmatch(r"(\d{4})-(\d{4})", str(y.get("id", "")))
         if not m or int(m[2]) != int(m[1]) + 1:
             raise DataError(f"[[years]] id must look like 2026-2027, got {y.get('id')!r}")
+        if y["id"] in ids:
+            raise DataError(f"[[years]] {y['id']} appears twice")
+        ids.add(y["id"])
         y["span"] = (dt.date(int(m[1]), 8, 1), dt.date(int(m[2]), 7, 31))
         y["label"] = f"{m[1]}–{m[2]}"
         y.setdefault("terms", [])
         y.setdefault("blocked", [])
+        if not isinstance(y["terms"], list) or not all(isinstance(t, dict) for t in y["terms"]):
+            raise DataError(f"[[years]] {y['id']}: terms must be a list of {{ name, start, end }}")
         for t in y["terms"]:
             unknown(t, TERM_KEYS, f"term in {y['id']}")
-            if not (isinstance(t["start"], dt.date) and isinstance(t["end"], dt.date)):
-                raise DataError(f"term {t.get('name')}: start/end must be dates")
+            if TERM_KEYS - set(t):
+                raise DataError(f"term in {y['id']}: missing {sorted(TERM_KEYS - set(t))}")
+            if not isinstance(t["name"], str):
+                raise DataError(f"term in {y['id']}: name must be a quoted string")
+            if not (is_date(t["start"]) and is_date(t["end"])):
+                raise DataError(f"term {t['name']}: start/end must be plain dates (no quotes)")
+            if t["start"] > t["end"]:
+                raise DataError(f"term {t['name']}: start is after end")
+            if not (y["span"][0] <= t["start"] and t["end"] <= y["span"][1]):
+                raise DataError(f"term {t['name']}: must lie inside {y['id']} (August 1 to July 31)")
+        terms = sorted(y["terms"], key=lambda t: t["start"])
+        for a, b in zip(terms, terms[1:]):
+            if b["start"] <= a["end"]:
+                raise DataError(f"terms {a['name']} and {b['name']} overlap")
+        if not isinstance(y["blocked"], list) or not all(is_date(d) for d in y["blocked"]):
+            raise DataError(f"[[years]] {y['id']}: blocked must be a list of plain dates (no quotes)")
         y["talks"] = []
     years.sort(key=lambda y: y["span"][0])
 
@@ -94,22 +138,28 @@ def load(path: Path) -> dict:
         where = f"[[talks]] {t.get('date')}"
         unknown(t, TALK_KEYS, where)
         d = t.get("date")
-        if not isinstance(d, dt.date) or isinstance(d, dt.datetime):
+        if not is_date(d):
             raise DataError(f"{where}: date must be a plain date like 2026-10-02 (no quotes)")
         if d in seen:
             raise DataError(f"{where}: two talks on the same date")
         seen.add(d)
         if d.weekday() != weekday:
             print(f"warning: {d} is a {WEEKDAYS[d.weekday()]}, not a {series['weekday']}", file=sys.stderr)
+        if "reserved" in t and not isinstance(t["reserved"], bool):
+            raise DataError(f"{where}: reserved must be true or false (no quotes)")
+        for key in TALK_KEYS - {"date", "reserved"}:
+            if key in t and not isinstance(t[key], str):
+                raise DataError(f"{where}: {key} must be a quoted string")
+        for key in ("speaker", "affiliation", "position", "title", "room", "note"):
+            if key in t:
+                t[key] = " ".join(t[key].split())
         if not t.get("reserved") and not t.get("speaker"):
             raise DataError(f"{where}: needs a speaker, or reserved = true")
         if t.get("webpage") and not re.match(r"https?://", t["webpage"]):
             raise DataError(f"{where}: webpage must start with http:// or https://")
         t["start_t"] = parse_time(t["start"], where) if "start" in t else series["start_t"]
         t["end_t"] = parse_time(t["end"], where) if "end" in t else series["end_t"]
-        for key in ("speaker", "affiliation", "position", "title", "room", "note"):
-            if key in t:
-                t[key] = " ".join(str(t[key]).split())
+        check_order(t["start_t"], t["end_t"], f"{where}: start/end")
         owner = [y for y in years if y["span"][0] <= d <= y["span"][1]]
         if not owner:
             raise DataError(f"{where}: no [[years]] entry covers this date")
@@ -133,9 +183,14 @@ def load(path: Path) -> dict:
 
 def parse_time(value, where) -> dt.time:
     m = re.fullmatch(r"(\d{1,2}):(\d{2})", str(value))
-    if not m:
+    if not m or int(m[1]) > 23 or int(m[2]) > 59:
         raise DataError(f"{where}: time must be HH:MM (24-hour), got {value!r}")
     return dt.time(int(m[1]), int(m[2]))
+
+
+def check_order(start: dt.time, end: dt.time, where) -> None:
+    if end <= start:
+        raise DataError(f"{where}: end time {end:%H:%M} must be after start time {start:%H:%M}")
 
 
 # ---------------------------------------------------------------- formatting
@@ -461,32 +516,57 @@ def pick_current(years: list[dict], today: dt.date) -> dict:
     return started[-1] if started else years[0]
 
 
+# Per-talk files the build owns: only these are ever deleted, and only when stale.
+OWNED = {"ics": re.compile(r"\d{4}-\d{2}-\d{2}\.ics"), "flyers": re.compile(r"\d{4}-\d{2}-\d{2}\.html")}
+
+
+def write_file(path: Path, payload: bytes) -> None:
+    """Write via a temporary file and rename, so a reader never sees half a file."""
+    tmp = path.with_name(f".{path.name}.tmp")
+    try:
+        tmp.write_bytes(payload)
+        os.replace(tmp, path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
 def build(data_path: Path, out: Path, today: dt.date) -> dict:
     data = load(data_path)
     s = data["series"]
-    out.mkdir(parents=True, exist_ok=True)
-    if out.resolve() != ROOT:
-        shutil.copyfile(ROOT / "style.css", out / "style.css")
-    for sub, pattern in (("ics", "*.ics"), ("flyers", "*.html")):
-        (out / sub).mkdir(exist_ok=True)
-        for old in (out / sub).glob(pattern):
-            old.unlink()
 
+    # Render everything first: if anything fails, the previous site is left untouched.
     current = pick_current(data["years"], today)
+    files = {}  # path relative to out -> bytes
     written = []
     for y in data["years"]:
-        text = year_page(y, data, today, current)
-        (out / f"{y['id']}.html").write_text(text, encoding="utf-8")
+        text = year_page(y, data, today, current).encode("utf-8")
+        files[f"{y['id']}.html"] = text
         written.append(f"{y['id']}.html")
         if y is current:
-            (out / "index.html").write_text(text, encoding="utf-8")
-            (out / "schedule.txt").write_text(schedule_text(y, s), encoding="utf-8", newline="\n")
+            files["index.html"] = text
+            files["schedule.txt"] = schedule_text(y, s).encode("utf-8")
     booked = [t for t in data["talks"] if not t.get("reserved")]
-    (out / "seminar.ics").write_bytes(ics_calendar(booked, s, today))
+    files["seminar.ics"] = ics_calendar(booked, s, today)
     for t in booked:
-        (out / "ics" / f"{t['date']}.ics").write_bytes(ics_calendar([t], s, today))
+        files[f"ics/{t['date']}.ics"] = ics_calendar([t], s, today)
         if t.get("title"):
-            (out / "flyers" / f"{t['date']}.html").write_text(flyer_page(t, s), encoding="utf-8")
+            files[f"flyers/{t['date']}.html"] = flyer_page(t, s).encode("utf-8")
+
+    out.mkdir(parents=True, exist_ok=True)
+    if out.resolve() != ROOT:
+        files["style.css"] = (ROOT / "style.css").read_bytes()
+    for sub in OWNED:
+        d = out / sub
+        if d.is_symlink() or (d.exists() and not d.is_dir()):
+            raise DataError(f"{d} must be a plain folder (not a symlink or a file); move it away and rebuild")
+        d.mkdir(exist_ok=True)
+    for rel, payload in files.items():
+        write_file(out / rel, payload)
+    for sub, pattern in OWNED.items():
+        for old in (out / sub).iterdir():
+            if (pattern.fullmatch(old.name) and old.is_file() and not old.is_symlink()
+                    and f"{sub}/{old.name}" not in files):
+                old.unlink()  # a talk that was removed, renamed to reserved, or lost its title
     return {"current": current["id"], "years": written, "talks": len(booked),
             "flyers": sum(1 for t in booked if t.get("title")),
             "open": sum(len([d for d in ds if d >= today]) for _, ds in current["fridays"])}
