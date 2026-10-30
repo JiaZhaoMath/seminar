@@ -41,7 +41,10 @@ TALK_KEYS = {
     "start", "end", "room", "note", "abstract", "bio", "reserved",
 }
 SEP = '<span class="sep"> · </span>'
-WEEKDAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+# Host part of every calendar UID. Frozen, not taken from site_url: subscribed calendars match
+# events by UID, so a new host would show every talk as deleted and re-added.
+UID_HOST = "jiazhaomath.github.io"
+WEEKDAYS =["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
 
 class DataError(Exception):
@@ -494,7 +497,7 @@ def ics_calendar(talks: list[dict], s: dict, stamp: dt.date) -> bytes:
             desc.append(plain(t["abstract"]))
         desc.append(url)
         lines += ["BEGIN:VEVENT",
-                  f"UID:{d:%Y%m%d}-applied-math-seminar@{s['site_url'].split('://', 1)[1].split('/', 1)[0]}",
+                  f"UID:{d:%Y%m%d}-applied-math-seminar@{UID_HOST}",
                   f"DTSTAMP:{stamp:%Y%m%d}T000000Z",
                   f"DTSTART:{ics_utc(local_dt(t, 'start', s['tz']))}",
                   f"DTEND:{ics_utc(local_dt(t, 'end', s['tz']))}",

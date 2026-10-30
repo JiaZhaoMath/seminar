@@ -158,6 +158,13 @@ class LiveDataTest(SiteChecks, unittest.TestCase):
     def test_privacy_data_file(self):
         self.assertEqual(privacy_hits(self.src), [], "talks.toml (values or comments)")
 
+    def test_calendar_uids_keep_original_host(self):
+        # site_url moved to zhaojia.net; UIDs must not follow it, or subscribers get duplicates.
+        uids = re.findall(r"^UID:(\S+)", (self.out / "seminar.ics").read_text(encoding="utf-8"), re.M)
+        self.assertTrue(uids)
+        for uid in uids:
+            self.assertRegex(uid, r"^\d{8}-applied-math-seminar@jiazhaomath\.github\.io$")
+
 
 class SeedFixtureTest(SiteChecks, unittest.TestCase):
     """Known answers for the frozen September 28 data."""

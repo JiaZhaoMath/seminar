@@ -31,7 +31,7 @@ university = "The University of Alabama"
 city = "Tuscaloosa, Alabama"
 organizer = "Jia Zhao"
 contact = "jia.zhao@ua.edu"
-site_url = "https://jiazhaomath.github.io/seminar/"
+site_url = "https://zhaojia.net/seminar/"
 timezone = "America/Chicago"
 weekday = "Friday"
 default_start = "11:00"
@@ -138,6 +138,7 @@ date = 2026-11-06
 speaker = "Paul Laiu"
 position = "Staff Mathematician"
 affiliation = "Oak Ridge National Laboratory"
+webpage = "https://sites.google.com/site/mtplaiu"
 title = "Structure-preserving acceleration methods for kinetic simulations"
 start = "11:00"
 end = "11:50"
@@ -154,7 +155,9 @@ date = 2026-11-13
 speaker = "Vadim Zharnitsky"
 position = "Professor, Department of Mathematics"
 affiliation = "University of Illinois Urbana-Champaign"
+webpage = "https://math.illinois.edu/directory/profile/vzh"
 title = "Optimal damping in the mass-spring systems"
+room = "GP 346"
 abstract = '''
 It is a well-known textbook example in classical mechanics that a single-degree-of-freedom mass-spring harmonic oscillator achieves its fastest exponential decay when the damping is critical. We study the analogous problem of designing optimal damping for a system of several coupled linear oscillators. Using the Weyl–Horn theorem, we construct an explicit damping matrix that theoretically realizes the best possible exponential decay rate of the system, which turns out to be the geometric mean of the natural frequencies. We show that this damping strategy outperforms the classical Rayleigh (proportional) damping approach. We also characterize the parameter regimes in which the optimal damping matrix necessarily ceases to be positive definite, and discuss the implications of this phenomenon.
 
@@ -169,7 +172,9 @@ date = 2026-11-20
 speaker = "Kirill Golubnichiy"
 position = "Postdoc, Department of Mathematics & Statistics"
 affiliation = "Texas Tech University"
+webpage = "https://www.depts.ttu.edu/math/about/directory/bio/index.php?id=1798"
 title = "A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography"
+room = "GP 346"
 abstract = '''
 In this talk, we develop a new semi-discrete version of the Carleman estimate-based convexification method, a globally convergent numerical approach for nonlinear inverse problems. The semi-discrete convexification method is used to generate an accurate starting point for the subsequent deep learning training procedure. An important feature of the continuous convexification method is that its convergence to the true solution does not require the availability of a sufficiently accurate initial guess.
 
@@ -184,5 +189,9 @@ date = 2026-12-04
 speaker = "Chunyan Li"
 position = "Postdoc, Department of Mathematics"
 affiliation = "University of South Carolina"
+webpage = "https://chunyanlimath.github.io/"
 start = "11:00"
 end = "11:50"
+bio = '''
+Chunyan Li is a postdoctoral scholar in the Department of Mathematics at the University of South Carolina, working with Qi Wang. She received her Ph.D. in applied mathematics from the University of South Carolina in 2023 and previously held a postdoctoral position at Penn State University. Her research focuses on scientific machine learning for partial differential equations, data-driven modeling and digital twins for biomedical systems, inverse problems, data assimilation, and uncertainty quantification.
+'''
