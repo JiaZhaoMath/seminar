@@ -1,0 +1,52 @@
+# Rebuilds the site every Saturday so that Friday's talk moves from "Upcoming" to "Past"
+# (and past open dates drop off) without a manual push. The pages are static: build.py
+# decides upcoming/past from the date it runs, in Central time.
+name: Weekly rebuild
+
+on:
+  schedule:
+    - cron: "0 11 * * 6"   # Saturdays 11:00 UTC = 5–6 AM Central
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: weekly-rebuild
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build
+        run: python3 build.py
+      - name: Test
+        run: python3 -m unittest discover tests
+      - name: Commit and push if anything changed
+        id: commit
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898273+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Weekly rebuild ($(TZ=America/Chicago date +%F))"
+            git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+      # A push made with the workflow token may not start a Pages build on its own; ask explicitly.
+      - name: Request a Pages build
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

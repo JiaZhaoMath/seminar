@@ -4,6 +4,7 @@
 # Put only what may appear on the website here. Keep hosts, email threads,
 # booking status and other private notes in your own files instead.
 #
+# Before editing: git pull                (a weekly GitHub job commits rebuilds)
 # After editing:  python3 build.py        (then check index.html in a browser)
 #                 python3 -m unittest discover tests
 #                 git add -A && git commit -m "Add talk" && git push

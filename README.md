@@ -23,6 +23,7 @@ Sibling site: [UASAM 2026](https://zhaojia.net/UASAM2026/), whose stylesheet thi
 | `tests/test_build.py` | Checks: a privacy scan of the data (comments included) and every generated file, links, calendar format, and rejection of bad data |
 | `tests/fixtures/seed_talks.toml` | Frozen copy of the September 28, 2026 data for the exact-answer tests. Never edit it |
 | `.nojekyll` | Tells GitHub Pages to serve the files as they are |
+| `.github/workflows/weekly-rebuild.yml` | Saturday-morning rebuild + tests + push, so finished talks move to "Past talks" without a manual push |
 
 Never edit the generated files by hand; the next build overwrites them.
 
@@ -70,9 +71,10 @@ Never edit the generated files by hand; the next build overwrites them.
    an end time that is not after the start time, a quoted `reserved = "true"`, or terms that are reversed,
    overlap, or fall outside their year. Adding or changing talks never requires editing the tests.
 
-4. Publish:
+4. Publish (`git pull` first: the weekly rebuild below commits to `main`):
 
    ```sh
+   git pull
    git add -A
    git commit -m "Add Jane Doe, January 22"
    git push
@@ -80,8 +82,12 @@ Never edit the generated files by hand; the next build overwrites them.
 
    GitHub Pages redeploys from the `main` branch root within about a minute.
 
-"Upcoming", "Past" and "Open dates" are worked out when you run the build. Rebuild and push after a talk
-has happened so that it moves to "Past talks".
+"Upcoming", "Past" and "Open dates" are worked out when the build runs, not when someone views the page.
+The GitHub Actions job `.github/workflows/weekly-rebuild.yml` therefore rebuilds every Saturday morning, runs the
+tests, and pushes the result (only if something changed), so Friday's talk moves to "Past talks" on its own.
+Because that job commits to `main`, run `git pull` before editing `talks.toml`. If a generated file conflicts
+after a pull, just rebuild: the generated files never need a hand merge. Start the job by hand from the
+repository's Actions tab (or `gh workflow run weekly-rebuild.yml`).
 
 Calendar events are identified by their date. The identifiers keep the original `jiazhaomath.github.io`
 host (`UID_HOST` in `build.py`) even though the site moved to zhaojia.net; changing it would duplicate every
