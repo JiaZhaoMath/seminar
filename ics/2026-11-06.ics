@@ -8,13 +8,33 @@ X-WR-CALNAME:UA Applied Mathematics Seminar
 X-WR-TIMEZONE:America/Chicago
 BEGIN:VEVENT
 UID:20261106-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261106T170000Z
 DTEND:20261106T175000Z
-SUMMARY:Applied Mathematics Seminar: Paul Laiu — Title TBA
+SUMMARY:Applied Mathematics Seminar: Paul Laiu — Structure-preserving acc
+ eleration methods for kinetic simulations
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
- \nTitle TBA\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-
- 06
+ \nStructure-preserving acceleration methods for kinetic simulations\nKinet
+ ic equations model physical phenomena across neutron transport\, plasmas\,
+  and radiative transfer. However\, large-scale kinetic simulations are bot
+ tlenecked by severe memory and computational costs due to their high dimen
+ sionality. In this talk\, we will discuss two different acceleration strat
+ egies that substantially reduce these costs while preserving important str
+ uctural properties. First\, we introduce a new entropy-based moment closur
+ e for moment systems derived from kinetic equations. This new closure bypa
+ sses expensive optimization in traditional entropy-based closures via a co
+ nvex neural network approximation of the entropy function. This approach e
+ nables efficient\, high-order moment simulations while guaranteeing provab
+ le physical properties such as entropy dissipation and hyperbolicity. Seco
+ nd\, we combine a high-order/low-order (HOLO) method with a micro-macro (M
+ M) decomposition to accelerate iterative solvers in implicit time-stepping
+  schemes for the Bhatnagar-Gross-Krook (BGK) model. The HOLO method improv
+ es convergence by incorporating source-term estimates from a coupled low-o
+ rder model\, whereas the MM decomposition reduces the memory cost at the f
+ luid limit. Numerical experiments confirm that both strategies deliver sig
+ nificant savings in memory and computation over traditional methods.\nhttp
+ s://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
 END:VEVENT
 END:VCALENDAR

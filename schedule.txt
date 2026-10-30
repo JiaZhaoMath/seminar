@@ -22,9 +22,9 @@ Friday, October 16, 2026, 10:00–10:50 AM, GP 208
 Aina G. Irbe, Accessible Minds
 Towards Inclusive Intelligence: Defining the Research Challenges at the Intersection of Artificial Intelligence, Universal Design for Learning, and Workplace Training
 
-Friday, November 6, 2026, 11:00–11:50 AM
+Friday, November 6, 2026, 11:00–11:50 AM, GP 346
 Paul Laiu, Oak Ridge National Laboratory
-Title TBA
+Structure-preserving acceleration methods for kinetic simulations
 
 Friday, November 13, 2026, 11:00–11:50 AM
 Vadim Zharnitsky, University of Illinois Urbana-Champaign
