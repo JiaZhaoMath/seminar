@@ -13,6 +13,7 @@ DTSTART:20261113T170000Z
 DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
  n the mass-spring systems
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
  ersity of Illinois Urbana-Champaign\nOptimal damping in the mass-spring sy
  stems\nIt is a well-known textbook example in classical mechanics that a s
@@ -27,8 +28,7 @@ DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
  arameter regimes in which the optimal damping matrix necessarily ceases to
   be positive definite\, and discuss the implications of this phenomenon.\n
  \nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (
- Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
- 2026-11-13
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
+ Technion\, Israel).\nhttps://zhaojia.net/seminar/2026-2027.html#2026-11-13
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 END:VCALENDAR

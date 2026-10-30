@@ -3,9 +3,9 @@
 Website for the **Applied Mathematics Seminar**, Department of Mathematics, The University of Alabama.
 Fridays, 11:00–11:50 AM Central time. Organizer: Jia Zhao (jia.zhao@ua.edu).
 
-Live site: https://jiazhaomath.github.io/seminar/
+Live site: https://zhaojia.net/seminar/ (the old address https://jiazhaomath.github.io/seminar/ redirects there)
 
-Sibling site: [UASAM 2026](https://jiazhaomath.github.io/UASAM2026/), whose stylesheet this one adapts.
+Sibling site: [UASAM 2026](https://zhaojia.net/UASAM2026/), whose stylesheet this one adapts.
 
 ## What is here
 
@@ -16,7 +16,7 @@ Sibling site: [UASAM 2026](https://jiazhaomath.github.io/UASAM2026/), whose styl
 | `style.css` | Hand-written stylesheet (UA crimson, serif, dark mode, print styles for the flyers) |
 | `index.html` | Generated: the current academic year |
 | `2026-2027.html` | Generated: one page per academic year. Permanent anchors such as `2026-2027.html#2026-10-02` |
-| `seminar.ics` | Generated: calendar feed with every talk (subscribe with `webcal://jiazhaomath.github.io/seminar/seminar.ics`) |
+| `seminar.ics` | Generated: calendar feed with every talk (subscribe with `webcal://zhaojia.net/seminar/seminar.ics`) |
 | `ics/<date>.ics` | Generated: "Add to calendar" file for one talk |
 | `flyers/<date>.html` | Generated: one-page printable flyer for each talk that has a title |
 | `schedule.txt` | Generated: plain-text list of the current year's talks (date, time, room, speaker, affiliation, title) to paste into emails |
@@ -83,7 +83,9 @@ Never edit the generated files by hand; the next build overwrites them.
 "Upcoming", "Past" and "Open dates" are worked out when you run the build. Rebuild and push after a talk
 has happened so that it moves to "Past talks".
 
-Calendar events are identified by their date. Changing a talk's details updates the event in subscribed
+Calendar events are identified by their date. The identifiers keep the original `jiazhaomath.github.io`
+host (`UID_HOST` in `build.py`) even though the site moved to zhaojia.net; changing it would duplicate every
+event in subscribed calendars. Changing a talk's details updates the event in subscribed
 calendars, but moving a talk to another date (or deleting it) makes subscribers see the old event disappear
 and a new one appear; people who downloaded a single `.ics` file keep their copy. For a moved talk, say so in
 the `note` and in the announcement email.

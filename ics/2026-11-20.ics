@@ -14,6 +14,7 @@ DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
   Convexification Method Combined with Deep Learning for Electrical Impedan
  ce Tomography
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
  istics\, Texas Tech University\nA Semi-Discrete Convexification Method Com
  bined with Deep Learning for Electrical Impedance Tomography\nIn this talk
@@ -31,8 +32,8 @@ DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
  oblem of Electrical Impedance Tomography. Numerical experiments involving 
  complicated conductivity structures demonstrate the accuracy\, robustness\
  , and computational feasibility of the combined semi-discrete convexificat
- ion and deep learning procedure.\nhttps://jiazhaomath.github.io/seminar/20
- 26-2027.html#2026-11-20
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
+ ion and deep learning procedure.\nhttps://zhaojia.net/seminar/2026-2027.ht
+ ml#2026-11-20
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 END:VCALENDAR

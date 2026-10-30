@@ -34,9 +34,9 @@ DESCRIPTION:Matthias Dogbatsey\, PhD student\, Department of Mathematics\,
  –Krylov method\, stabilized by a coupling relaxation strategy. We valida
  te against manufactured solutions and biomolecular benchmarks\, and show t
  hat both steric ion effects and short-range Lennard-Jones repulsion are re
- quired for a Stern layer to emerge.\nhttps://jiazhaomath.github.io/seminar
- /2026-2027.html#2026-09-11
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-11
+ quired for a Stern layer to emerge.\nhttps://zhaojia.net/seminar/2026-2027
+ .html#2026-09-11
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-09-11
 END:VEVENT
 BEGIN:VEVENT
 UID:20260925-applied-math-seminar@jiazhaomath.github.io
@@ -69,8 +69,8 @@ DESCRIPTION:Zheng Sun\, Associate Professor\, Department of Mathematics\, T
  ms. The OE procedure is non-intrusive\, facilitating seamless integration 
  into existing DG codes as an independent module. Extensive numerical resul
  ts confirm the analysis and validate the effectiveness of the OEDG method.
- \nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
+ \nhttps://zhaojia.net/seminar/2026-2027.html#2026-09-25
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-09-25
 END:VEVENT
 BEGIN:VEVENT
 UID:20261002-applied-math-seminar@jiazhaomath.github.io
@@ -97,9 +97,9 @@ DESCRIPTION:Keren Li\, Assistant Professor\, Department of Mathematics\, Un
  nd distributed AI systems that communicate information at the data level r
  ather than the model level. The talk concludes with current challenges and
   future directions toward a unified framework for distributed AI under het
- erogeneity and communication constraints.\nhttps://jiazhaomath.github.io/s
- eminar/2026-2027.html#2026-10-02
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-02
+ erogeneity and communication constraints.\nhttps://zhaojia.net/seminar/202
+ 6-2027.html#2026-10-02
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-02
 END:VEVENT
 BEGIN:VEVENT
 UID:20261009-applied-math-seminar@jiazhaomath.github.io
@@ -123,9 +123,8 @@ DESCRIPTION:Baoli Hao\, Ph.D. candidate in Applied Mathematics\, Illinois I
  en recovering microscopic interactions and identifying their observable dy
  namical effects\, providing a general perspective on data-driven coarse-gr
  aining and the limits of learning multiscale physics from finite-resolutio
- n observations.\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026
- -10-09
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-09
+ n observations.\nhttps://zhaojia.net/seminar/2026-2027.html#2026-10-09
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-09
 END:VEVENT
 BEGIN:VEVENT
 UID:20261016-applied-math-seminar@jiazhaomath.github.io
@@ -157,9 +156,9 @@ DESCRIPTION:Aina G. Irbe\, Chief Operating Officer\, Accessible Minds\nTowa
  t Accessibility Guidelines (WCAG) offers a way to assess whether AI-develo
  ped training is accessible\, inclusive\, and educationally sound. Three re
  search questions and recommendations for future studies outline the next s
- teps needed to validate it.\nhttps://jiazhaomath.github.io/seminar/2026-20
- 27.html#2026-10-16
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-16
+ teps needed to validate it.\nhttps://zhaojia.net/seminar/2026-2027.html#20
+ 26-10-16
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-16
 END:VEVENT
 BEGIN:VEVENT
 UID:20261106-applied-math-seminar@jiazhaomath.github.io
@@ -189,8 +188,8 @@ DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
  rder model\, whereas the MM decomposition reduces the memory cost at the f
  luid limit. Numerical experiments confirm that both strategies deliver sig
  nificant savings in memory and computation over traditional methods.\nhttp
- s://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
+ s://zhaojia.net/seminar/2026-2027.html#2026-11-06
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-06
 END:VEVENT
 BEGIN:VEVENT
 UID:20261113-applied-math-seminar@jiazhaomath.github.io
@@ -199,6 +198,7 @@ DTSTART:20261113T170000Z
 DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
  n the mass-spring systems
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
  ersity of Illinois Urbana-Champaign\nOptimal damping in the mass-spring sy
  stems\nIt is a well-known textbook example in classical mechanics that a s
@@ -213,9 +213,8 @@ DESCRIPTION:Vadim Zharnitsky\, Professor\, Department of Mathematics\, Univ
  arameter regimes in which the optimal damping matrix necessarily ceases to
   be positive definite\, and discuss the implications of this phenomenon.\n
  \nThis is a joint work with M. Arnold (UT-Dallas\, USA) and O. Gendelman (
- Technion\, Israel).\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#
- 2026-11-13
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
+ Technion\, Israel).\nhttps://zhaojia.net/seminar/2026-2027.html#2026-11-13
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 BEGIN:VEVENT
 UID:20261120-applied-math-seminar@jiazhaomath.github.io
@@ -225,6 +224,7 @@ DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
   Convexification Method Combined with Deep Learning for Electrical Impedan
  ce Tomography
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
  istics\, Texas Tech University\nA Semi-Discrete Convexification Method Com
  bined with Deep Learning for Electrical Impedance Tomography\nIn this talk
@@ -242,9 +242,9 @@ DESCRIPTION:Kirill Golubnichiy\, Postdoc\, Department of Mathematics & Stat
  oblem of Electrical Impedance Tomography. Numerical experiments involving 
  complicated conductivity structures demonstrate the accuracy\, robustness\
  , and computational feasibility of the combined semi-discrete convexificat
- ion and deep learning procedure.\nhttps://jiazhaomath.github.io/seminar/20
- 26-2027.html#2026-11-20
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
+ ion and deep learning procedure.\nhttps://zhaojia.net/seminar/2026-2027.ht
+ ml#2026-11-20
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 BEGIN:VEVENT
 UID:20261204-applied-math-seminar@jiazhaomath.github.io
@@ -253,8 +253,8 @@ DTSTART:20261204T170000Z
 DTEND:20261204T175000Z
 SUMMARY:Applied Mathematics Seminar: Chunyan Li — Title TBA
 DESCRIPTION:Chunyan Li\, Postdoc\, Department of Mathematics\, University o
- f South Carolina\nTitle TBA\nhttps://jiazhaomath.github.io/seminar/2026-20
- 27.html#2026-12-04
-URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-12-04
+ f South Carolina\nTitle TBA\nhttps://zhaojia.net/seminar/2026-2027.html#20
+ 26-12-04
+URL:https://zhaojia.net/seminar/2026-2027.html#2026-12-04
 END:VEVENT
 END:VCALENDAR

@@ -1,6 +1,6 @@
 Applied Mathematics Seminar, 2026–2027
 Department of Mathematics, The University of Alabama
-https://jiazhaomath.github.io/seminar/
+https://zhaojia.net/seminar/
 
 Friday, September 11, 2026, 11:00–11:50 AM, GP 346
 Matthias Dogbatsey, The University of Alabama
@@ -26,11 +26,11 @@ Friday, November 6, 2026, 11:00–11:50 AM, GP 346
 Paul Laiu, Oak Ridge National Laboratory
 Structure-preserving acceleration methods for kinetic simulations
 
-Friday, November 13, 2026, 11:00–11:50 AM
+Friday, November 13, 2026, 11:00–11:50 AM, GP 346
 Vadim Zharnitsky, University of Illinois Urbana-Champaign
 Optimal damping in the mass-spring systems
 
-Friday, November 20, 2026, 11:00–11:50 AM
+Friday, November 20, 2026, 11:00–11:50 AM, GP 346
 Kirill Golubnichiy, Texas Tech University
 A Semi-Discrete Convexification Method Combined with Deep Learning for Electrical Impedance Tomography
 
