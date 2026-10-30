@@ -8,7 +8,7 @@ X-WR-CALNAME:UA Applied Mathematics Seminar
 X-WR-TIMEZONE:America/Chicago
 BEGIN:VEVENT
 UID:20260911-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20260911T160000Z
 DTEND:20260911T165000Z
 SUMMARY:Applied Mathematics Seminar: Matthias Dogbatsey — A Diffuse-Inter
@@ -40,7 +40,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-11
 END:VEVENT
 BEGIN:VEVENT
 UID:20260925-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20260925T160000Z
 DTEND:20260925T165000Z
 SUMMARY:Applied Mathematics Seminar: Zheng Sun — OEDG: Oscillation-Elimin
@@ -74,7 +74,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-09-25
 END:VEVENT
 BEGIN:VEVENT
 UID:20261002-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261002T160000Z
 DTEND:20261002T165000Z
 SUMMARY:Applied Mathematics Seminar: Keren Li — Representative Learning: 
@@ -103,7 +103,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-02
 END:VEVENT
 BEGIN:VEVENT
 UID:20261009-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261009T160000Z
 DTEND:20261009T165000Z
 SUMMARY:Applied Mathematics Seminar: Baoli Hao — What Can Ionic Transport
@@ -129,7 +129,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-09
 END:VEVENT
 BEGIN:VEVENT
 UID:20261016-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261016T150000Z
 DTEND:20261016T155000Z
 SUMMARY:Applied Mathematics Seminar: Aina G. Irbe — Towards Inclusive Int
@@ -163,18 +163,38 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-10-16
 END:VEVENT
 BEGIN:VEVENT
 UID:20261106-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261106T170000Z
 DTEND:20261106T175000Z
-SUMMARY:Applied Mathematics Seminar: Paul Laiu — Title TBA
+SUMMARY:Applied Mathematics Seminar: Paul Laiu — Structure-preserving acc
+ eleration methods for kinetic simulations
+LOCATION:GP 346\, The University of Alabama\, Tuscaloosa\, Alabama
 DESCRIPTION:Paul Laiu\, Staff Mathematician\, Oak Ridge National Laboratory
- \nTitle TBA\nhttps://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-
- 06
+ \nStructure-preserving acceleration methods for kinetic simulations\nKinet
+ ic equations model physical phenomena across neutron transport\, plasmas\,
+  and radiative transfer. However\, large-scale kinetic simulations are bot
+ tlenecked by severe memory and computational costs due to their high dimen
+ sionality. In this talk\, we will discuss two different acceleration strat
+ egies that substantially reduce these costs while preserving important str
+ uctural properties. First\, we introduce a new entropy-based moment closur
+ e for moment systems derived from kinetic equations. This new closure bypa
+ sses expensive optimization in traditional entropy-based closures via a co
+ nvex neural network approximation of the entropy function. This approach e
+ nables efficient\, high-order moment simulations while guaranteeing provab
+ le physical properties such as entropy dissipation and hyperbolicity. Seco
+ nd\, we combine a high-order/low-order (HOLO) method with a micro-macro (M
+ M) decomposition to accelerate iterative solvers in implicit time-stepping
+  schemes for the Bhatnagar-Gross-Krook (BGK) model. The HOLO method improv
+ es convergence by incorporating source-term estimates from a coupled low-o
+ rder model\, whereas the MM decomposition reduces the memory cost at the f
+ luid limit. Numerical experiments confirm that both strategies deliver sig
+ nificant savings in memory and computation over traditional methods.\nhttp
+ s://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
 URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-06
 END:VEVENT
 BEGIN:VEVENT
 UID:20261113-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261113T170000Z
 DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
@@ -199,7 +219,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 BEGIN:VEVENT
 UID:20261120-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261120T170000Z
 DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
@@ -228,7 +248,7 @@ URL:https://jiazhaomath.github.io/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 BEGIN:VEVENT
 UID:20261204-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261007T000000Z
+DTSTAMP:20261029T000000Z
 DTSTART:20261204T170000Z
 DTEND:20261204T175000Z
 SUMMARY:Applied Mathematics Seminar: Chunyan Li — Title TBA

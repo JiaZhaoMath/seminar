@@ -138,8 +138,16 @@ date = 2026-11-06
 speaker = "Paul Laiu"
 position = "Staff Mathematician"
 affiliation = "Oak Ridge National Laboratory"
+title = "Structure-preserving acceleration methods for kinetic simulations"
 start = "11:00"
 end = "11:50"
+room = "GP 346"
+abstract = '''
+Kinetic equations model physical phenomena across neutron transport, plasmas, and radiative transfer. However, large-scale kinetic simulations are bottlenecked by severe memory and computational costs due to their high dimensionality. In this talk, we will discuss two different acceleration strategies that substantially reduce these costs while preserving important structural properties. First, we introduce a new entropy-based moment closure for moment systems derived from kinetic equations. This new closure bypasses expensive optimization in traditional entropy-based closures via a convex neural network approximation of the entropy function. This approach enables efficient, high-order moment simulations while guaranteeing provable physical properties such as entropy dissipation and hyperbolicity. Second, we combine a high-order/low-order (HOLO) method with a micro-macro (MM) decomposition to accelerate iterative solvers in implicit time-stepping schemes for the Bhatnagar-Gross-Krook (BGK) model. The HOLO method improves convergence by incorporating source-term estimates from a coupled low-order model, whereas the MM decomposition reduces the memory cost at the fluid limit. Numerical experiments confirm that both strategies deliver significant savings in memory and computation over traditional methods.
+'''
+bio = '''
+Paul Laiu is a Staff Mathematician in the Multiscale Methods and Dynamics Group at Oak Ridge National Laboratory. He received his Ph.D. degree in Electrical and Computer Engineering from University of Maryland College Park in 2016. Paul’s research interest includes surrogate modeling, iterative solvers, and numerical schemes for various partial differential equations in kinetic theory. His work focuses on the design, development, and analysis of mathematical tools that accelerate the simulation and learning of multiscale systems, with applications in astrophysics, computational fluid dynamics, nuclear fusion, and rarefied gas.
+'''
 
 [[talks]]
 date = 2026-11-13
