@@ -160,6 +160,9 @@ It is a well-known textbook example in classical mechanics that a single-degree-
 
 This is a joint work with M. Arnold (UT-Dallas, USA) and O. Gendelman (Technion, Israel).
 '''
+bio = '''
+Vadim Zharnitsky is a professor of mathematics at the University of Illinois Urbana-Champaign, where he also holds an appointment in the Coordinated Science Laboratory. He received his Ph.D. in applied mathematics from Rensselaer Polytechnic Institute in 1996. His research focuses on dynamical systems and differential equations, with particular interests in nonlinear waves and Hamiltonian dynamics.
+'''
 
 [[talks]]
 date = 2026-11-20
@@ -171,6 +174,9 @@ abstract = '''
 In this talk, we develop a new semi-discrete version of the Carleman estimate-based convexification method, a globally convergent numerical approach for nonlinear inverse problems. The semi-discrete convexification method is used to generate an accurate starting point for the subsequent deep learning training procedure. An important feature of the continuous convexification method is that its convergence to the true solution does not require the availability of a sufficiently accurate initial guess.
 
 We introduce a new concept of (h)-strong convexity, where (h) denotes the grid step size in the semi-discrete formulation. This property enables us to derive an a priori accuracy estimate for the starting point supplied to the deep learning stage. The proposed approach is applied to the highly nonlinear inverse problem of Electrical Impedance Tomography. Numerical experiments involving complicated conductivity structures demonstrate the accuracy, robustness, and computational feasibility of the combined semi-discrete convexification and deep learning procedure.
+'''
+bio = '''
+Kirill V. Golubnichiy is a postdoctoral scholar in the Department of Mathematics and Statistics at Texas Tech University. He received his Ph.D. from the University of Washington, Seattle, in 2022. His research focuses on inverse and ill-posed problems for partial differential equations, with applications in mathematical finance, imaging, and mathematical physics. He develops analytical and computational methods based on Carleman estimates, convexification, and machine learning, and also studies mean field games.
 '''
 
 [[talks]]
