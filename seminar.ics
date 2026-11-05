@@ -8,7 +8,7 @@ X-WR-CALNAME:UA Applied Mathematics Seminar
 X-WR-TIMEZONE:America/Chicago
 BEGIN:VEVENT
 UID:20260911-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20260911T160000Z
 DTEND:20260911T165000Z
 SUMMARY:Applied Mathematics Seminar: Matthias Dogbatsey — A Diffuse-Inter
@@ -40,7 +40,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-09-11
 END:VEVENT
 BEGIN:VEVENT
 UID:20260925-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20260925T160000Z
 DTEND:20260925T165000Z
 SUMMARY:Applied Mathematics Seminar: Zheng Sun — OEDG: Oscillation-Elimin
@@ -74,7 +74,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-09-25
 END:VEVENT
 BEGIN:VEVENT
 UID:20261002-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261002T160000Z
 DTEND:20261002T165000Z
 SUMMARY:Applied Mathematics Seminar: Keren Li — Representative Learning: 
@@ -103,7 +103,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-02
 END:VEVENT
 BEGIN:VEVENT
 UID:20261009-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261009T160000Z
 DTEND:20261009T165000Z
 SUMMARY:Applied Mathematics Seminar: Baoli Hao — What Can Ionic Transport
@@ -128,7 +128,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-09
 END:VEVENT
 BEGIN:VEVENT
 UID:20261016-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261016T150000Z
 DTEND:20261016T155000Z
 SUMMARY:Applied Mathematics Seminar: Aina G. Irbe — Towards Inclusive Int
@@ -162,7 +162,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-10-16
 END:VEVENT
 BEGIN:VEVENT
 UID:20261106-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261106T170000Z
 DTEND:20261106T175000Z
 SUMMARY:Applied Mathematics Seminar: Paul Laiu — Structure-preserving acc
@@ -193,7 +193,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-06
 END:VEVENT
 BEGIN:VEVENT
 UID:20261113-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261113T170000Z
 DTEND:20261113T175000Z
 SUMMARY:Applied Mathematics Seminar: Vadim Zharnitsky — Optimal damping i
@@ -218,7 +218,7 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-13
 END:VEVENT
 BEGIN:VEVENT
 UID:20261120-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261120T170000Z
 DTEND:20261120T175000Z
 SUMMARY:Applied Mathematics Seminar: Kirill Golubnichiy — A Semi-Discrete
@@ -248,13 +248,56 @@ URL:https://zhaojia.net/seminar/2026-2027.html#2026-11-20
 END:VEVENT
 BEGIN:VEVENT
 UID:20261204-applied-math-seminar@jiazhaomath.github.io
-DTSTAMP:20261031T000000Z
+DTSTAMP:20261105T000000Z
 DTSTART:20261204T170000Z
 DTEND:20261204T175000Z
-SUMMARY:Applied Mathematics Seminar: Chunyan Li — Title TBA
+SUMMARY:Applied Mathematics Seminar: Chunyan Li — Structure-Aware Scienti
+ fic Machine Learning for Personalized Digital Twins: From Personalized Bio
+ medical Inference to Reliable Neural Network Solvers for Nonlinear PDEs
 DESCRIPTION:Chunyan Li\, Postdoc\, Department of Mathematics\, University o
- f South Carolina\nTitle TBA\nhttps://zhaojia.net/seminar/2026-2027.html#20
- 26-12-04
+ f South Carolina\nStructure-Aware Scientific Machine Learning for Personal
+ ized Digital Twins: From Personalized Biomedical Inference to Reliable Neu
+ ral Network Solvers for Nonlinear PDEs\nUnderstanding complex dynamical sy
+ stems from sparse and heterogeneous data requires models that learn effect
+ ively while respecting the mathematical structures governing their evoluti
+ on. In this talk\, I present a structure-aware scientific machine learning
+  research program spanning personalized biomedical inference and reliable 
+ neural solvers for nonlinear PDEs.\n\nFirst\, I introduce a personalized g
+ raph-PDE framework for characterizing the spatiotemporal progression of Al
+ zheimer’s disease from longitudinal multimodal neuroimaging data such as
+  MRI\, PET\, and resting-state fMRI. The model represents 68 brain regions
+  as nodes in a patient-specific functional-connectivity graph and uses a l
+ ow-rank representation to capture individual deviations from population-le
+ vel connectivity. It couples amyloid-β\, tau\, neurodegeneration\, and co
+ gnitive decline through local interactions and network-mediated propagatio
+ n. To enable efficient parameter inference from sparse longitudinal data i
+ n this nonlinear model\, I develop a hierarchical inference strategy and h
+ omotopy regularization. When applied to 1\,891 participants from the Alzhe
+ imer’s Disease Neuroimaging Initiative (ADNI)\, the model improves the p
+ rediction of future biomarker and cognitive trajectories over homogeneous 
+ and standard clinical or neuroimaging benchmarks\, with relative gains of 
+ up to 9.73% for individuals whose brain networks differ substantially from
+  the population norm.\n\nSecond\, scalable personalized mechanistic models
+  require accurate and reliable forward simulation for nonlinear\, multisca
+ le PDEs. Using thermodynamically consistent phase-field systems as a testb
+ ed\, I develop structure-aware neural network solvers that improve both wh
+ ere computational effort is allocated and how the neural network is optimi
+ zed. Energy-dissipation-rate-guided adaptive sampling (EDRAS) targets regi
+ ons with high local energy dissipation where interfacial evolution occurs\
+ , rather than refining solely where the PDE residual is large. For Allen
+ –Cahn dynamics\, EDRAS reduces relative mean-square error by up to a fac
+ tor of six compared with residual-based refinement and identifies high-err
+ or regions more reliably. I also leverage random projection neural network
+ s (RPNNs)\, which fix randomly generated hidden features and determine out
+ put coefficients via deterministic nonlinear least squares\, enabling seco
+ nd-order optimization. I develop a structure-aware RPNN solver for the fou
+ rth-order Cahn–Hilliard system that combines a scaled auxiliary-variable
+  formulation\, separate random-feature spaces\, adaptive sampling\, and do
+ main decomposition\, achieving relative L² errors as low as 8.64 × 10⁻
+ ⁴ and outperforming matched deep-PINN baselines by nearly three orders o
+ f magnitude.\n\nTogether\, these works advance interpretable\, personalize
+ d mechanistic digital twins underpinned by reliable scientific machine lea
+ rning.\nhttps://zhaojia.net/seminar/2026-2027.html#2026-12-04
 URL:https://zhaojia.net/seminar/2026-2027.html#2026-12-04
 END:VEVENT
 END:VCALENDAR

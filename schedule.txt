@@ -36,4 +36,4 @@ A Semi-Discrete Convexification Method Combined with Deep Learning for Electrica
 
 Friday, December 4, 2026, 11:00–11:50 AM
 Chunyan Li, University of South Carolina
-Title TBA
+Structure-Aware Scientific Machine Learning for Personalized Digital Twins: From Personalized Biomedical Inference to Reliable Neural Network Solvers for Nonlinear PDEs
