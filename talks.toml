@@ -48,8 +48,8 @@ terms = [
   { name = "Fall 2026", start = 2026-08-19, end = 2026-12-04 },
   { name = "Spring 2027", start = 2027-01-13, end = 2027-04-30 },
 ]
-# Study break, Thanksgiving, spring break, Honors Day (UA academic calendar)
-blocked = [2026-10-30, 2026-11-27, 2027-03-26, 2027-04-09]
+# Study break, Thanksgiving, spring break (Mar 19 + 26), Honors Day (UA academic calendar)
+blocked = [2026-10-30, 2026-11-27, 2027-03-19, 2027-03-26, 2027-04-09]
 
 [[talks]]
 date = 2026-09-11
